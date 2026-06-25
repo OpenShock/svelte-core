@@ -1,0 +1,6 @@
+/* Showcase styling for the dev playground (src/routes).
+   Mirrors how a consuming app wires the design system:
+   Tailwind first, then the shared theme. */
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '../lib/theme.css';
