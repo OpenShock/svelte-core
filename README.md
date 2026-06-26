@@ -1,22 +1,30 @@
 # @openshock/svelte-core
 
-Shared Svelte/SvelteKit core for OpenShock frontends. It owns the **shadcn-svelte
-component baseline**, the **design-system theme**, and a few dependency-light helpers
-that are common to both the cloud frontend and the firmware captive portal. It is a
-plain Svelte component library (built with [`@sveltejs/package`](https://svelte.dev/docs/kit/packaging)) —
-it does **not** depend on SvelteKit, so it works in any Vite + Svelte 5 app.
+Shared Svelte core for OpenShock frontends.
+
+It owns the **shadcn-svelte component baseline**, the **design-system theme**, and a few dependency-light helpers that are common to both the cloud frontend and the firmware captive portal.
+
+It is a plain Svelte component library (built with [`@sveltejs/package`](https://svelte.dev/docs/kit/packaging)), it does **not** depend on SvelteKit, so it works in any Vite + Svelte 5 app.
 
 ## Install
 
 ```sh
-pnpm add @openshock/svelte-core
+pnpm i -D @openshock/svelte-core@latest
 ```
 
-Peer dependencies (`svelte`, `bits-ui`, `tailwind-variants`, `tailwind-merge`, `clsx`,
-`@lucide/svelte`, `svelte-sonner`) are expected in the consuming app. A few are optional
-and only needed if you use the component that pulls them in (`@internationalized/date`
-→ calendar/date-picker, `@tanstack/table-core` → data-table, `vaul-svelte` → drawer,
-`formsnap` + `sveltekit-superforms` → form).
+Peer dependencies (`svelte`, `bits-ui`, `tailwind-variants`, `tailwind-merge`, `clsx`, `@lucide/svelte`, `svelte-sonner`) are expected in the consuming app.
+
+A few are optional and only needed if you use the component that pulls them in (
+
+  `@internationalized/date` → calendar/date-picker,
+  
+  `@tanstack/table-core` → data-table,
+  
+  `vaul-svelte` → drawer,
+  
+  `formsnap` + `sveltekit-superforms` → form
+  
+).
 
 ## Usage
 
