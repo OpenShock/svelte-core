@@ -96,6 +96,11 @@
 			"types": "./dist/typeguards/index.d.ts",
 			"svelte": "./dist/typeguards/index.js"
 		},
+		"./state/*": {
+			"types": "./dist/state/*.d.ts",
+			"svelte": "./dist/state/*.js",
+			"default": "./dist/state/*.js"
+		},
 		"./package.json": "./package.json"
 	},
 	"peerDependencies": {
