@@ -43,9 +43,35 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
 		},
 		"./theme.css": "./dist/theme.css",
+		"./components": {
+			"types": "./dist/components/index.d.ts",
+			"svelte": "./dist/components/index.js",
+			"default": "./dist/components/index.js"
+		},
+		"./components/input": {
+			"types": "./dist/components/input/index.d.ts",
+			"svelte": "./dist/components/input/index.js",
+			"default": "./dist/components/input/index.js"
+		},
+		"./components/svg": {
+			"types": "./dist/components/svg/index.d.ts",
+			"svelte": "./dist/components/svg/index.js",
+			"default": "./dist/components/svg/index.js"
+		},
+		"./components/datetime-picker": {
+			"types": "./dist/components/datetime-picker/index.d.ts",
+			"svelte": "./dist/components/datetime-picker/index.js",
+			"default": "./dist/components/datetime-picker/index.js"
+		},
+		"./components/dialog-manager": {
+			"types": "./dist/components/dialog-manager/index.d.ts",
+			"svelte": "./dist/components/dialog-manager/index.js",
+			"default": "./dist/components/dialog-manager/index.js"
+		},
 		"./ui/*": {
 			"types": "./dist/components/ui/*/index.d.ts",
 			"svelte": "./dist/components/ui/*/index.js"
@@ -90,7 +116,8 @@
 		},
 		"./hooks/is-mobile.svelte": {
 			"types": "./dist/hooks/is-mobile.svelte.d.ts",
-			"svelte": "./dist/hooks/is-mobile.svelte.js"
+			"svelte": "./dist/hooks/is-mobile.svelte.js",
+			"default": "./dist/hooks/is-mobile.svelte.js"
 		},
 		"./typeguards": {
 			"types": "./dist/typeguards/index.d.ts",
