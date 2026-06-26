@@ -58,10 +58,21 @@ run('pnpm run format');
 // Apply custom modifications
 console.log('Applying custom modifications...');
 
+// Patches run *after* `pnpm run format`, so match against the formatted output:
+// 2-space indentation, single quotes (see .prettierrc). Patterns that assume tab
+// indentation or double quotes silently no-op. A no-op almost always means the
+// upstream registry changed and the customization is stale, so fail loudly rather
+// than emit a broken file for `pnpm run check` to flag cryptically later.
 function patch(filePath, replacements) {
   let source = fs.readFileSync(filePath, 'utf-8');
   for (const [pattern, replacement] of replacements) {
-    source = source.replace(pattern, replacement);
+    const next = source.replace(pattern, replacement);
+    if (next === source) {
+      throw new Error(
+        `Patch did not apply in ${filePath}: ${pattern}. The upstream shadcn component likely changed; update the patch.`
+      );
+    }
+    source = next;
   }
   fs.writeFileSync(filePath, source);
 }
@@ -76,17 +87,15 @@ patch(path.join(UI_DIR, 'sidebar/sidebar-menu-sub.svelte'), [
   [/mx-3\.5(.*)px-2\.5/g, 'ml-3.5$1pl-2.5'],
 ]);
 
-// Sonner: decouple from any app color-scheme store. `theme` is consumer-injected
-// (default 'system'); the shadcn registry version imports mode-watcher, which we
-// strip entirely. Consumers pass e.g. `theme={colorScheme.value}`.
+// Sonner: source the theme from our own color-scheme store instead of
+// mode-watcher. The shadcn registry imports `mode` from mode-watcher and uses
+// `theme={mode.current}`; we swap both for `$lib/state/color-scheme-state`.
 patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
-  ['import { mode } from "mode-watcher";\n', ''],
-  ["\timport { mode } from 'mode-watcher';\n", ''],
   [
-    'let { ...restProps }: SonnerProps = $props();',
-    "// `theme` is consumer-injected (e.g. `theme={colorScheme.value}`) so this\n\t// component stays free of any app-specific color-scheme state.\n\tlet { theme = 'system', ...restProps }: SonnerProps = $props();",
+    /^([ \t]*)import \{ mode \} from ['"]mode-watcher['"];/m,
+    "$1import { colorScheme } from '$lib/state/color-scheme-state.svelte';",
   ],
-  ['theme={mode.current}', '{theme}'],
+  [/theme=\{mode\.current\}/, 'theme={colorScheme.value}'],
 ]);
 
 // Slider: add cursor-w-resize to thumb
@@ -96,7 +105,7 @@ patch(path.join(UI_DIR, 'slider/slider.svelte'), [
 
 // Toggle group: suppress state_referenced_locally warnings
 patch(path.join(UI_DIR, 'toggle-group/toggle-group.svelte'), [
-  [/\tsetToggleGroupCtx/, '\t// svelte-ignore state_referenced_locally\n\tsetToggleGroupCtx'],
+  [/(\n[ \t]*)setToggleGroupCtx/, '$1// svelte-ignore state_referenced_locally$1setToggleGroupCtx'],
 ]);
 
 // Final format and check
