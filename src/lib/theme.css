@@ -5,13 +5,22 @@
  *
  *   @import 'tailwindcss';
  *   @import 'tw-animate-css';
- *   @import '@openshock/shared-ui/theme.css';
+ *   @import '@openshock/svelte-core/theme.css';
  *
  * It owns the design tokens (light + dark), the @theme color mappings, the
  * base layer, the data-* custom variants the shadcn components rely on, and
  * the keyframes/utilities they use. Keep app-specific styling (e.g. tour /
  * driver.js theming, marketing layout helpers) in each app's own app.css.
  */
+
+/*
+ * Register this package's components as a Tailwind content source. Tailwind v4
+ * auto-detection skips node_modules, so without this consumers would have to
+ * add their own `@source '@openshock/svelte-core'`. The path is relative to
+ * this file, so it resolves to `dist/components` once published (and to
+ * `src/lib/components` during this package's own dev build).
+ */
+@source './components';
 
 @custom-variant dark (&:is(.dark *));
 
