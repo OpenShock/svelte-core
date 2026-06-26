@@ -1,6 +1,6 @@
 {
 	"name": "@openshock/svelte-core",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Shared OpenShock Svelte/SvelteKit core: shadcn-svelte component baseline, design-system theme, and common utilities used by both the cloud frontend and the firmware captive portal.",
 	"license": "AGPL-3.0-or-later",
 	"repository": {
