@@ -6,7 +6,13 @@ It owns the **shadcn-svelte component baseline**, the **design-system theme**, a
 
 It is a plain Svelte component library (built with [`@sveltejs/package`](https://svelte.dev/docs/kit/packaging)), it does **not** depend on SvelteKit, so it works in any Vite + Svelte 5 app.
 
-## Install
+> **Where this lives:** the package is developed inside the OpenShock
+> [Frontend](https://github.com/OpenShock/Frontend) repo as a git submodule at
+> `packages/svelte-core`, where it's part of a [Turborepo](https://turbo.build)
+> workspace and consumed via `workspace:*`. It is **also** published to npm for
+> external consumers — both of the workflows below are supported.
+
+## Install (external consumers)
 
 ```sh
 pnpm i -D @openshock/svelte-core@latest
@@ -52,12 +58,26 @@ Then import components by subpath:
 
 ## Develop
 
+Within the **Frontend monorepo** (the normal workflow — Turbo builds this package
+automatically as a `workspace:*` dependency). From the frontend root:
+
+```sh
+pnpm dev          # builds svelte-core → dist/, then runs the frontend dev server
+pnpm watch:core   # incremental svelte-package --watch while you edit svelte-core
+```
+
+Standalone in this package (showcase playground / isolated work):
+
 ```sh
 pnpm install
-pnpm dev      # showcase playground at src/routes
-pnpm check    # svelte-check
-pnpm build    # svelte-package → dist/ + publint
+pnpm dev          # showcase playground at src/routes
+pnpm check        # svelte-check
+pnpm build        # svelte-kit sync + svelte-package → dist/
+pnpm build:watch  # same, in watch mode
 ```
+
+`publint` runs at publish time via `prepack` (it's intentionally not in `build`,
+so Turbo builds and watch rebuilds stay fast).
 
 ### Updating shadcn components
 
