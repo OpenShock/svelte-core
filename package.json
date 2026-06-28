@@ -8,10 +8,6 @@
 		"url": "git+https://github.com/OpenShock/svelte-core.git"
 	},
 	"packageManager": "pnpm@11.9.0",
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
-	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package && publint",
