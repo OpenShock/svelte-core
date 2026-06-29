@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '$lib/utils/shadcn.js';
-  import { Textarea } from '$lib/components/ui/textarea/index.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
+  import { Textarea } from '@openshock/svelte-core/components/ui/textarea/index.js';
   import type { ComponentProps } from 'svelte';
 
   let {

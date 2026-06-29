@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Time } from '@internationalized/date';
-  import { Label } from '$lib/components/ui/label';
-  import { cn } from '$lib/utils';
+  import { Label } from '@openshock/svelte-core/components/ui/label/index.js';
+  import { cn } from '@openshock/svelte-core/utils/index.js';
   import TimePickerInput from './time-picker-input.svelte';
 
   let {

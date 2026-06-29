@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
-  import { Input } from '$lib/components/ui/input/index.js';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { Input } from '@openshock/svelte-core/components/ui/input/index.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

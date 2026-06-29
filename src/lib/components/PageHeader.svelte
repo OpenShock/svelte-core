@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from '$lib/utils';
+  import { cn } from '@openshock/svelte-core/utils/index.js';
   import type { Snippet } from 'svelte';
 
   let {

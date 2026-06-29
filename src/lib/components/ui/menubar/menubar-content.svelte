@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Menubar as MenubarPrimitive } from 'bits-ui';
   import MenubarPortal from './menubar-portal.svelte';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
   import type { ComponentProps } from 'svelte';
 
   let {

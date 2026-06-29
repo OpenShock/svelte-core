@@ -1,4 +1,4 @@
-import type { ValidationResult } from '$lib/types/ValidationResult';
+import type { ValidationResult } from '@openshock/svelte-core/types/ValidationResult.js';
 
 const emailRegex =
   /^[\w-!#$%&'*+/=?^`{|}~](\.?[\w-!#$%&'*+/=?^`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;

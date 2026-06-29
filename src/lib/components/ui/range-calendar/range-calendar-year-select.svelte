@@ -1,6 +1,6 @@
 <script lang="ts">
   import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
   import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 
   let {

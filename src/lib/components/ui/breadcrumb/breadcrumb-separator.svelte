@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn, type WithElementRef } from '$lib/utils/shadcn.js';
+  import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
   import type { HTMLLiAttributes } from 'svelte/elements';
   import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Slider as SliderPrimitive } from 'bits-ui';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

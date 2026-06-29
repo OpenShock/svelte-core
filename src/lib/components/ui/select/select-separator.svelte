@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Separator as SeparatorPrimitive } from 'bits-ui';
-  import { Separator } from '$lib/components/ui/separator/index.js';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { Separator } from '@openshock/svelte-core/components/ui/separator/index.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ScrollArea as ScrollAreaPrimitive } from 'bits-ui';
-  import { cn, type WithoutChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChild } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

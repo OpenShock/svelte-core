@@ -20,9 +20,9 @@
 </script>
 
 <script lang="ts">
-  import { cn } from '$lib/utils/shadcn.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { ComponentProps } from 'svelte';
-  import { Button } from '$lib/components/ui/button/index.js';
+  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
 
   let {
     ref = $bindable(null),

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import TextInput from '$lib/components/input/TextInput.svelte';
-  import { validateEmail } from '$lib/inputvalidation/emailValidator';
-  import type { AnyComponent } from '$lib/types/AnyComponent';
-  import type { ValidationResult } from '$lib/types/ValidationResult';
+  import TextInput from '@openshock/svelte-core/components/input/TextInput.svelte';
+  import { validateEmail } from '@openshock/svelte-core/inputvalidation/emailValidator.js';
+  import type { AnyComponent } from '@openshock/svelte-core/types/AnyComponent.js';
+  import type { ValidationResult } from '@openshock/svelte-core/types/ValidationResult.js';
   import type { Snippet } from 'svelte';
   import type { FullAutoFill } from 'svelte/elements';
 

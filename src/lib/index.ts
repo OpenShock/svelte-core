@@ -1,8 +1,8 @@
 // @openshock/svelte-core
 //
 // Components are consumed via subpath exports to keep tree-shaking tight, e.g.
-//   import { Button } from '@openshock/svelte-core/ui/button';
-//   import { cn } from '@openshock/svelte-core/utils/shadcn';
+//   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
+//   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 // and the design-system theme via
 //   import '@openshock/svelte-core/theme.css';
 //

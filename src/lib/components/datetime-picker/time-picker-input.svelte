@@ -19,8 +19,8 @@
 
 <script lang="ts">
   import { Time } from '@internationalized/date';
-  import { Input } from '$lib/components/ui/input';
-  import { cn } from '$lib/utils';
+  import { Input } from '@openshock/svelte-core/components/ui/input/index.js';
+  import { cn } from '@openshock/svelte-core/utils/index.js';
   import {
     type Period,
     type TimePickerType,

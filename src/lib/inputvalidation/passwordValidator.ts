@@ -1,6 +1,6 @@
-import type { TwTextColor } from '$lib/types/Tailwind';
-import type { ValidationResult } from '$lib/types/ValidationResult';
-import { calculateStringEntropy } from '$lib/utils/entropy';
+import type { TwTextColor } from '@openshock/svelte-core/types/Tailwind.js';
+import type { ValidationResult } from '@openshock/svelte-core/types/ValidationResult.js';
+import { calculateStringEntropy } from '@openshock/svelte-core/utils/entropy.js';
 
 export function validatePassword(value: string): ValidationResult | null {
   if (value.length == 0) {

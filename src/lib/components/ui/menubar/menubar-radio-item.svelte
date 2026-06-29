@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Menubar as MenubarPrimitive } from 'bits-ui';
-  import { cn, type WithoutChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChild } from '@openshock/svelte-core/utils/shadcn.js';
   import CheckIcon from '@lucide/svelte/icons/check';
 
   let {

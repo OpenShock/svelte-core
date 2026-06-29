@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn, type WithElementRef, type WithoutChildren } from '$lib/utils/shadcn.js';
+  import { cn, type WithElementRef, type WithoutChildren } from '@openshock/svelte-core/utils/shadcn.js';
   import MoreHorizontalIcon from '@lucide/svelte/icons/more-horizontal';
 
   let {

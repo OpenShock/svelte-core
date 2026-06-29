@@ -1,6 +1,6 @@
 <script lang="ts">
-  import * as Empty from '$lib/components/ui/empty';
-  import { cn } from '$lib/utils';
+  import * as Empty from '@openshock/svelte-core/components/ui/empty/index.js';
+  import { cn } from '@openshock/svelte-core/utils/index.js';
   import type { Component, Snippet } from 'svelte';
 
   interface Props {

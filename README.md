@@ -58,12 +58,13 @@ Then import components by subpath:
 
 ## Develop
 
-Within the **Frontend monorepo** (the normal workflow — Turbo builds this package
-automatically as a `workspace:*` dependency). From the frontend root:
+This package is consumed **from source** as a `workspace:*` dependency — its
+`exports` point directly at `src/lib`, so there is no build step. Editing a file
+here hot-reloads instantly in any consuming app's dev server. From the frontend
+root just run:
 
 ```sh
-pnpm dev          # builds svelte-core → dist/, then runs the frontend dev server
-pnpm watch:core   # incremental svelte-package --watch while you edit svelte-core
+pnpm dev          # frontend dev server; svelte-core source is compiled inline
 ```
 
 Standalone in this package (showcase playground / isolated work):
@@ -72,12 +73,7 @@ Standalone in this package (showcase playground / isolated work):
 pnpm install
 pnpm dev          # showcase playground at src/routes
 pnpm check        # svelte-check
-pnpm build        # svelte-kit sync + svelte-package → dist/
-pnpm build:watch  # same, in watch mode
 ```
-
-`publint` runs at publish time via `prepack` (it's intentionally not in `build`,
-so Turbo builds and watch rebuilds stay fast).
 
 ### Updating shadcn components
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Ellipsis from '@lucide/svelte/icons/ellipsis';
-  import { Button } from '$lib/components/ui/button';
-  import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
+  import * as DropdownMenu from '@openshock/svelte-core/components/ui/dropdown-menu/index.js';
   import type { Snippet } from 'svelte';
 
   interface Props {

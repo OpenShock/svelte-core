@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Separator } from '$lib/components/ui/separator/index.js';
-  import { cn, type WithElementRef } from '$lib/utils/shadcn.js';
+  import { Separator } from '@openshock/svelte-core/components/ui/separator/index.js';
+  import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
   import type { HTMLAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
 

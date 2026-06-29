@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ChildrenFunc } from '$lib/types/ChildrenFunc';
+  import type { ChildrenFunc } from '@openshock/svelte-core/types/ChildrenFunc.js';
 
   interface Props {
     children?: ChildrenFunc;

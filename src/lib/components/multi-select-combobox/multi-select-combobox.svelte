@@ -1,12 +1,12 @@
 <script lang="ts" generics="T extends { value: string; label: string }">
   import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
   import { type Snippet } from 'svelte';
-  import * as Command from '$lib/components/ui/command/index.js';
-  import * as Popover from '$lib/components/ui/popover/index.js';
-  import { Button } from '$lib/components/ui/button/index.js';
-  import { Label } from '$lib/components/ui/label/index.js';
-  import { Checkbox } from '$lib/components/ui/checkbox/index.js';
-  import { Spinner } from '$lib/components/ui/spinner/index.js';
+  import * as Command from '@openshock/svelte-core/components/ui/command/index.js';
+  import * as Popover from '@openshock/svelte-core/components/ui/popover/index.js';
+  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
+  import { Label } from '@openshock/svelte-core/components/ui/label/index.js';
+  import { Checkbox } from '@openshock/svelte-core/components/ui/checkbox/index.js';
+  import { Spinner } from '@openshock/svelte-core/components/ui/spinner/index.js';
 
   const id = $props.id();
 

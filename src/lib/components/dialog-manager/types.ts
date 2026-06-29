@@ -1,4 +1,4 @@
-import type { AnyComponent } from '$lib/types/AnyComponent';
+import type { AnyComponent } from '@openshock/svelte-core/types/AnyComponent.js';
 import type { Snippet } from 'svelte';
 
 // Props passed to dialog content components

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Checkbox as CheckboxPrimitive } from 'bits-ui';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
   import CheckIcon from '@lucide/svelte/icons/check';
   import MinusIcon from '@lucide/svelte/icons/minus';
 

@@ -6,7 +6,7 @@ import {
   isObject,
   isString,
   isStringOrNull,
-} from '$lib/typeguards/basicGuards';
+} from '@openshock/svelte-core/typeguards/basicGuards.js';
 import { describe, expect, it } from 'vitest';
 
 describe('isString', () => {
