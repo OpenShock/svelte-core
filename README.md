@@ -22,14 +22,14 @@ Peer dependencies (`svelte`, `bits-ui`, `tailwind-variants`, `tailwind-merge`, `
 
 A few are optional and only needed if you use the component that pulls them in (
 
-  `@internationalized/date` → calendar/date-picker,
-  
-  `@tanstack/table-core` → data-table,
-  
-  `vaul-svelte` → drawer,
-  
-  `formsnap` + `sveltekit-superforms` → form
-  
+`@internationalized/date` → calendar/date-picker,
+
+`@tanstack/table-core` → data-table,
+
+`vaul-svelte` → drawer,
+
+`formsnap` + `sveltekit-superforms` → form
+
 ).
 
 ## Usage

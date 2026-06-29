@@ -4,7 +4,10 @@
   import { Input } from '@openshock/svelte-core/components/ui/input/index.js';
   import * as InputGroup from '@openshock/svelte-core/components/ui/input-group/index.js';
   import type { AnyComponent } from '@openshock/svelte-core/types/AnyComponent.js';
-  import { GetValResColor, type ValidationResult } from '@openshock/svelte-core/types/ValidationResult.js';
+  import {
+    GetValResColor,
+    type ValidationResult,
+  } from '@openshock/svelte-core/types/ValidationResult.js';
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { Snippet } from 'svelte';
   import type { ClipboardEventHandler, FocusEventHandler, FullAutoFill } from 'svelte/elements';

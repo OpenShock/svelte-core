@@ -1,7 +1,10 @@
 <script lang="ts">
   import { Pagination as PaginationPrimitive } from 'bits-ui';
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
-  import { buttonVariants, type ButtonSize } from '@openshock/svelte-core/components/ui/button/index.js';
+  import {
+    buttonVariants,
+    type ButtonSize,
+  } from '@openshock/svelte-core/components/ui/button/index.js';
   let {
     ref = $bindable(null),
     class: className,
