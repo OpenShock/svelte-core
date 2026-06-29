@@ -89,11 +89,15 @@ patch(path.join(UI_DIR, 'sidebar/sidebar-menu-sub.svelte'), [
 
 // Sonner: source the theme from our own color-scheme store instead of
 // mode-watcher. The shadcn registry imports `mode` from mode-watcher and uses
-// `theme={mode.current}`; we swap both for `$lib/state/color-scheme-state`.
+// `theme={mode.current}`; we swap both for our color-scheme state. Use the
+// `@openshock/svelte-core` self-import (not `$lib`) so the specifier matches the
+// rest of the CLI-generated components and resolves in consuming apps too — see
+// the `exports` self-reference in package.json. `$lib` only exists inside a
+// SvelteKit app build and would not resolve once the package is published.
 patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
   [
     /^([ \t]*)import \{ mode \} from ['"]mode-watcher['"];/m,
-    "$1import { colorScheme } from '$lib/state/color-scheme-state.svelte';",
+    "$1import { colorScheme } from '@openshock/svelte-core/state/color-scheme-state.svelte.js';",
   ],
   [/theme=\{mode\.current\}/, 'theme={colorScheme.value}'],
 ]);
