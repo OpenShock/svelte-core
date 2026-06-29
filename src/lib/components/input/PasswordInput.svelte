@@ -1,12 +1,12 @@
 <script lang="ts">
   import { Eye, EyeOff } from '@lucide/svelte';
-  import { checkPwnedCount } from '$lib/api/pwnedPasswords';
-  import TextInput from '$lib/components/input/TextInput.svelte';
-  import { Button } from '$lib/components/ui/button';
-  import { validatePassword } from '$lib/inputvalidation/passwordValidator';
-  import type { AnyComponent } from '$lib/types/AnyComponent';
-  import type { ValidationResult } from '$lib/types/ValidationResult';
-  import { useDebounce } from '$lib/utils/debounce';
+  import { checkPwnedCount } from '@openshock/svelte-core/api/pwnedPasswords.js';
+  import TextInput from '@openshock/svelte-core/components/input/TextInput.svelte';
+  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
+  import { validatePassword } from '@openshock/svelte-core/inputvalidation/passwordValidator.js';
+  import type { AnyComponent } from '@openshock/svelte-core/types/AnyComponent.js';
+  import type { ValidationResult } from '@openshock/svelte-core/types/ValidationResult.js';
+  import { useDebounce } from '@openshock/svelte-core/utils/debounce.js';
   import type { Snippet } from 'svelte';
   import type { FullAutoFill } from 'svelte/elements';
   import PasswordStrengthMeter from './impl/PasswordStrengthMeter.svelte';

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Popover as PopoverPrimitive } from 'bits-ui';
   import PopoverPortal from './popover-portal.svelte';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
   import type { ComponentProps } from 'svelte';
 
   let {

@@ -1,4 +1,4 @@
-import { HashString } from '$lib/utils/crypto';
+import { HashString } from '@openshock/svelte-core/utils/crypto.js';
 
 export async function checkPwnedCount(password: string): Promise<number> {
   if (!password) {

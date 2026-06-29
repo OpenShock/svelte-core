@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Select as SelectPrimitive } from 'bits-ui';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { ComponentProps } from 'svelte';
 
   let {

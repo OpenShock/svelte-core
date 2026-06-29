@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { isTwitterHandle } from '$lib/typeguards';
+  import { isTwitterHandle } from '@openshock/svelte-core/typeguards/index.js';
 
   interface Props {
     site?: string | number;

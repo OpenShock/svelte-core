@@ -1,9 +1,9 @@
 <script lang="ts">
   import { Tooltip as TooltipPrimitive } from 'bits-ui';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import TooltipPortal from './tooltip-portal.svelte';
   import type { ComponentProps } from 'svelte';
-  import type { WithoutChildrenOrChild } from '$lib/utils/shadcn.js';
+  import type { WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

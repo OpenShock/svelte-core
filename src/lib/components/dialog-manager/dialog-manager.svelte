@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as Dialog from '$lib/components/ui/dialog';
+  import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
   import { getOldestDialog } from './dialog-store.svelte.ts';
 
   let entry = $derived(getOldestDialog());

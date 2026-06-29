@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as FormPrimitive from 'formsnap';
-  import { cn, type WithoutChild } from '$lib/utils/shadcn.js';
+  import { cn, type WithoutChild } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

@@ -1,14 +1,14 @@
 <script lang="ts">
   import { Moon, Sun } from '@lucide/svelte';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import * as Dialog from '$lib/components/ui/dialog';
-  import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+  import { Button, buttonVariants } from '@openshock/svelte-core/components/ui/button/index.js';
+  import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
+  import * as DropdownMenu from '@openshock/svelte-core/components/ui/dropdown-menu/index.js';
   import {
     ColorScheme,
     colorScheme,
     getDarkReaderState,
-  } from '$lib/state/color-scheme-state.svelte';
-  import { cn } from '$lib/utils/shadcn';
+  } from '@openshock/svelte-core/state/color-scheme-state.svelte.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { toast } from 'svelte-sonner';
 
   let pendingScheme = $state<ColorScheme | null>(null);

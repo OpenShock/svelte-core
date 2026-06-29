@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { WithElementRef } from '$lib/utils/shadcn.js';
+  import type { WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

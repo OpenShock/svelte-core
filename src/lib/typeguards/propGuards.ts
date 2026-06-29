@@ -1,4 +1,9 @@
-import { isBoolean, isNumber, isObject, isString } from '$lib/typeguards';
+import {
+  isBoolean,
+  isNumber,
+  isObject,
+  isString,
+} from '@openshock/svelte-core/typeguards/index.js';
 
 export function HasString<K extends string>(
   obj: Record<string, unknown>,

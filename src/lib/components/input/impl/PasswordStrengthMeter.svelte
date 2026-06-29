@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getPasswordStrength } from '$lib/inputvalidation/passwordValidator';
-  import { twTextColor } from '$lib/types/Tailwind';
+  import { getPasswordStrength } from '@openshock/svelte-core/inputvalidation/passwordValidator.js';
+  import { twTextColor } from '@openshock/svelte-core/types/Tailwind.js';
 
   interface Props {
     password: string;

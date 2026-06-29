@@ -1,4 +1,4 @@
-import type { TwTextColor } from '$lib/types/Tailwind';
+import type { TwTextColor } from '@openshock/svelte-core/types/Tailwind.js';
 
 export type ValidationResult = {
   valid: boolean;

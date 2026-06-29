@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CircleCheckBig, Copy } from '@lucide/svelte';
-  import { cn } from '$lib/utils';
-  import { useClipboard } from '$lib/utils/clipboard.svelte';
+  import { cn } from '@openshock/svelte-core/utils/index.js';
+  import { useClipboard } from '@openshock/svelte-core/utils/clipboard.svelte.js';
   import type { Snippet } from 'svelte';
   import { scale } from 'svelte/transition';
 

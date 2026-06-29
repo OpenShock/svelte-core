@@ -1,4 +1,4 @@
-import { isString } from '$lib/typeguards';
+import { isString } from '@openshock/svelte-core/typeguards/index.js';
 import { PersistedState } from './classes/persisted-state.svelte';
 
 export enum ColorScheme {

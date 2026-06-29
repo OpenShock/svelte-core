@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { isTwitterHandle } from '$lib/typeguards/twitterHandleGuard';
+  import { isTwitterHandle } from '@openshock/svelte-core/typeguards/twitterHandleGuard.js';
 
   interface Props {
     type: 'summary' | 'summary_large_image';

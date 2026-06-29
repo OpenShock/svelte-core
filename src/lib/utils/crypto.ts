@@ -1,4 +1,4 @@
-import { EncodeString } from '$lib/utils/encoding';
+import { EncodeString } from '@openshock/svelte-core/utils/encoding.js';
 
 export const ArrayBufferToHex = (buffer: ArrayBuffer) =>
   Array.from(new Uint8Array(buffer))

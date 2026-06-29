@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from '$lib/utils/shadcn.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { Command as CommandPrimitive } from 'bits-ui';
 
   export type CommandRootApi = CommandPrimitive.Root;

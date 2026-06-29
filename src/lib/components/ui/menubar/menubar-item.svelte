@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Menubar as MenubarPrimitive } from 'bits-ui';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

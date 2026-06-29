@@ -1,22 +1,36 @@
 # @openshock/svelte-core
 
-Shared Svelte/SvelteKit core for OpenShock frontends. It owns the **shadcn-svelte
-component baseline**, the **design-system theme**, and a few dependency-light helpers
-that are common to both the cloud frontend and the firmware captive portal. It is a
-plain Svelte component library (built with [`@sveltejs/package`](https://svelte.dev/docs/kit/packaging)) —
-it does **not** depend on SvelteKit, so it works in any Vite + Svelte 5 app.
+Shared Svelte core for OpenShock frontends.
 
-## Install
+It owns the **shadcn-svelte component baseline**, the **design-system theme**, and a few dependency-light helpers that are common to both the cloud frontend and the firmware captive portal.
+
+It is a plain Svelte component library (built with [`@sveltejs/package`](https://svelte.dev/docs/kit/packaging)), it does **not** depend on SvelteKit, so it works in any Vite + Svelte 5 app.
+
+> **Where this lives:** the package is developed inside the OpenShock
+> [Frontend](https://github.com/OpenShock/Frontend) repo as a git submodule at
+> `packages/svelte-core`, where it's part of a [Turborepo](https://turbo.build)
+> workspace and consumed via `workspace:*`. It is **also** published to npm for
+> external consumers — both of the workflows below are supported.
+
+## Install (external consumers)
 
 ```sh
-pnpm add @openshock/svelte-core
+pnpm i -D @openshock/svelte-core@latest
 ```
 
-Peer dependencies (`svelte`, `bits-ui`, `tailwind-variants`, `tailwind-merge`, `clsx`,
-`@lucide/svelte`, `svelte-sonner`) are expected in the consuming app. A few are optional
-and only needed if you use the component that pulls them in (`@internationalized/date`
-→ calendar/date-picker, `@tanstack/table-core` → data-table, `vaul-svelte` → drawer,
-`formsnap` + `sveltekit-superforms` → form).
+Peer dependencies (`svelte`, `bits-ui`, `tailwind-variants`, `tailwind-merge`, `clsx`, `@lucide/svelte`, `svelte-sonner`) are expected in the consuming app.
+
+A few are optional and only needed if you use the component that pulls them in (
+
+`@internationalized/date` → calendar/date-picker,
+
+`@tanstack/table-core` → data-table,
+
+`vaul-svelte` → drawer,
+
+`formsnap` + `sveltekit-superforms` → form
+
+).
 
 ## Usage
 
@@ -44,11 +58,21 @@ Then import components by subpath:
 
 ## Develop
 
+This package is consumed **from source** as a `workspace:*` dependency — its
+`exports` point directly at `src/lib`, so there is no build step. Editing a file
+here hot-reloads instantly in any consuming app's dev server. From the frontend
+root just run:
+
+```sh
+pnpm dev          # frontend dev server; svelte-core source is compiled inline
+```
+
+Standalone in this package (showcase playground / isolated work):
+
 ```sh
 pnpm install
-pnpm dev      # showcase playground at src/routes
-pnpm check    # svelte-check
-pnpm build    # svelte-package → dist/ + publint
+pnpm dev          # showcase playground at src/routes
+pnpm check        # svelte-check
 ```
 
 ### Updating shadcn components

@@ -1,15 +1,18 @@
 <script lang="ts">
   /* eslint-disable svelte/no-navigation-without-resolve -- href comes from validation result, already a full URL */
 
-  import { Input } from '$lib/components/ui/input';
-  import * as InputGroup from '$lib/components/ui/input-group';
-  import type { AnyComponent } from '$lib/types/AnyComponent';
-  import { GetValResColor, type ValidationResult } from '$lib/types/ValidationResult';
-  import { cn } from '$lib/utils/shadcn.js';
+  import { Input } from '@openshock/svelte-core/components/ui/input/index.js';
+  import * as InputGroup from '@openshock/svelte-core/components/ui/input-group/index.js';
+  import type { AnyComponent } from '@openshock/svelte-core/types/AnyComponent.js';
+  import {
+    GetValResColor,
+    type ValidationResult,
+  } from '@openshock/svelte-core/types/ValidationResult.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { Snippet } from 'svelte';
   import type { ClipboardEventHandler, FocusEventHandler, FullAutoFill } from 'svelte/elements';
-  import { Field, FieldLabel } from '$lib/components/ui/field/index.js';
-  import { twTextColor } from '$lib/types/Tailwind';
+  import { Field, FieldLabel } from '@openshock/svelte-core/components/ui/field/index.js';
+  import { twTextColor } from '@openshock/svelte-core/types/Tailwind.js';
 
   interface Props {
     type?: 'text' | 'email' | 'password' | 'search' | 'url';
