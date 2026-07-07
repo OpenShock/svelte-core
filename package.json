@@ -34,7 +34,11 @@
 		},
 		"./theme.css": "./src/lib/theme.css",
 		"./package.json": "./package.json",
-		"./*": "./src/lib/*"
+		"./*": [
+			"./src/lib/*",
+			"./src/lib/*/index.ts",
+			"./src/lib/*/index.js"
+		]
 	},
 	"peerDependencies": {
 		"@internationalized/date": "^3.12.2",
