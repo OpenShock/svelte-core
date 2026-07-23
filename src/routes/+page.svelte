@@ -9,7 +9,7 @@
 
 <main class="mx-auto flex max-w-md flex-col gap-4 p-8">
   <h1 class="text-2xl font-bold">@openshock/svelte-core</h1>
-  <p class="text-muted-foreground text-sm">
+  <p class="text-sm text-muted-foreground">
     Dev playground for the shared OpenShock UI. Components here are consumed exactly as a downstream
     app would.
   </p>
