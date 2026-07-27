@@ -11,7 +11,7 @@
 <span
   data-state={item.state}
   class={cn(
-    'border-muted-foreground/40 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-sm font-medium transition-colors',
+    'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-muted-foreground/40 text-sm font-medium transition-colors',
     item.state === 'active' && 'border-primary bg-primary text-primary-foreground',
     item.state === 'completed' && 'border-primary bg-primary text-primary-foreground',
     className

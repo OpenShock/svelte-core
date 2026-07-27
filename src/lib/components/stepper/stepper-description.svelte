@@ -8,6 +8,6 @@
   const item = getStepperItemContext();
 </script>
 
-<p data-state={item.state} class={cn('text-muted-foreground text-xs', className)} {...restProps}>
+<p data-state={item.state} class={cn('text-xs text-muted-foreground', className)} {...restProps}>
   {@render children?.()}
 </p>
