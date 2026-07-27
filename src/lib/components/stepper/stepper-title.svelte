@@ -11,7 +11,7 @@
 <h4
   data-state={item.state}
   class={cn(
-    'text-sm leading-none font-medium',
+    'text-sm font-medium leading-none',
     item.state === 'inactive' && 'text-muted-foreground',
     className
   )}
