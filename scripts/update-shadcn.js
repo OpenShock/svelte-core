@@ -104,7 +104,10 @@ patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
 
 // Slider: add cursor-w-resize to thumb
 patch(path.join(UI_DIR, 'slider/slider.svelte'), [
-  [/select-none disabled:pointer/, 'cursor-w-resize select-none disabled:pointer'],
+  [
+    /transition-\[color,box-shadow\] select-none/,
+    'transition-[color,box-shadow] cursor-w-resize select-none',
+  ],
 ]);
 
 // Toggle group: suppress state_referenced_locally warnings
