@@ -4,7 +4,7 @@
     StepperItemState,
     getStepperRootContext,
     setStepperItemContext,
-  } from './stepper.svelte.js';
+  } from './stepper-state.svelte.js';
   import type { StepperItemProps } from './types.js';
 
   let {

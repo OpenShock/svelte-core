@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
-  import { StepperRootState, setStepperRootContext } from './stepper.svelte.js';
+  import { StepperRootState, setStepperRootContext } from './stepper-state.svelte.js';
   import type { StepperRootProps } from './types.js';
 
   let {

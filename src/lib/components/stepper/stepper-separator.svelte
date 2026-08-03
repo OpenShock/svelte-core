@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
-  import { getStepperRootContext, getStepperItemContext } from './stepper.svelte.js';
+  import { getStepperRootContext, getStepperItemContext } from './stepper-state.svelte.js';
   import type { StepperSeparatorProps } from './types.js';
 
   let { class: className, children, ...restProps }: StepperSeparatorProps = $props();
