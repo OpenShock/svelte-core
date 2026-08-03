@@ -1,11 +1,11 @@
 <script lang="ts">
   import { ToggleGroup as ToggleGroupPrimitive } from 'bits-ui';
-  import { getToggleGroupCtx } from './toggle-group.svelte';
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import {
     type ToggleVariants,
     toggleVariants,
   } from '@openshock/svelte-core/components/ui/toggle/index.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
+  import { getToggleGroupCtx } from './toggle-group.svelte';
 
   let {
     ref = $bindable(null),

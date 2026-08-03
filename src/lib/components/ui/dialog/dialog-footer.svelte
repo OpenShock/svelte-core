@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
-  import type { HTMLAttributes } from 'svelte/elements';
   import { Dialog as DialogPrimitive } from 'bits-ui';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
+  import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   let {
     ref = $bindable(null),

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { Popover as PopoverPrimitive } from 'bits-ui';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

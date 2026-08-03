@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { type WithElementRef } from 'bits-ui';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { HTMLAttributes } from 'svelte/elements';
 
   let {

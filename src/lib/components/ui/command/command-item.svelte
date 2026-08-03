@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Command as CommandPrimitive } from 'bits-ui';
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import CheckIcon from '@lucide/svelte/icons/check';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

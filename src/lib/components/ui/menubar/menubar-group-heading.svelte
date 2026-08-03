@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { Menubar as MenubarPrimitive } from 'bits-ui';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { ComponentProps } from 'svelte';
 
   let {

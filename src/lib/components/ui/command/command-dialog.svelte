@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Command as CommandPrimitive, Dialog as DialogPrimitive } from 'bits-ui';
-  import type { Snippet } from 'svelte';
-  import Command from './command.svelte';
   import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
   import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
+  import Command from './command.svelte';
+  import type { Command as CommandPrimitive, Dialog as DialogPrimitive } from 'bits-ui';
+  import type { Snippet } from 'svelte';
 
   let {
     open = $bindable(false),

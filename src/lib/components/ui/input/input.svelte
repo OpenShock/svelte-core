@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';
   import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
+  import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';
 
   type InputType = Exclude<HTMLInputTypeAttribute, 'file'>;
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Select as SelectPrimitive } from 'bits-ui';
-  import { cn, type WithoutChild } from '@openshock/svelte-core/utils/shadcn.js';
   import CheckIcon from '@lucide/svelte/icons/check';
+  import { cn, type WithoutChild } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

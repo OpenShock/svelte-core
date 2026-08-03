@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import Loader2Icon from '@lucide/svelte/icons/loader-2';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { SVGAttributes } from 'svelte/elements';
 
   let {
