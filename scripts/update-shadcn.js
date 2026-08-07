@@ -119,6 +119,12 @@ patch(path.join(UI_DIR, 'toggle-group/toggle-group.svelte'), [
 console.log('Final format...');
 run('pnpm run format');
 
+// svelte-check caches generated .ts files per source file under
+// .svelte-kit/.svelte-check and never prunes them. A component dropped from
+// UI_DIR therefore keeps getting checked from the cache and fails on imports
+// whose sources no longer exist, so wipe the cache before checking.
+fs.rmSync(path.join('.svelte-kit', '.svelte-check'), { recursive: true, force: true });
+
 console.log('Running checks...');
 run('pnpm run check');
 
