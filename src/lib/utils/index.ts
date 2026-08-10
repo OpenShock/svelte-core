@@ -9,4 +9,5 @@ export * from './parse';
 export * from './rand';
 export * from './shadcn';
 export * from './temporal';
+export * from './temporal-ticker';
 export * from './time';
