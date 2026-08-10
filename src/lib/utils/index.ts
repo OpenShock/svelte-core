@@ -1,3 +1,4 @@
+export * from './clipboard.svelte';
 export * from './convert';
 export * from './crypto';
 export * from './debounce';
