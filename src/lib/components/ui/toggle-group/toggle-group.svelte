@@ -38,7 +38,6 @@
       orientation?: 'horizontal' | 'vertical';
     } = $props();
 
-  // svelte-ignore state_referenced_locally
   setToggleGroupCtx({
     get variant() {
       return variant;

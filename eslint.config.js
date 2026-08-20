@@ -2,17 +2,12 @@ import svelte from 'eslint-plugin-svelte';
 import ts from 'typescript-eslint';
 import svelteConfig from './svelte.config.js';
 
-// `svelte.configs.base` wires up the parser and plugin without enabling any
-// rules. Formatting stays prettier's job (`pnpm run lint` runs both), and the
-// shadcn-svelte baseline this package vendors does not currently pass
-// eslint-plugin-svelte's `recommended` preset — so rules are opted into
-// individually rather than by preset.
+// Formatting is prettier's job — `svelte.configs.prettier` turns off the rules
+// that would fight it, and `pnpm run lint` runs both tools.
 export default ts.config(
   { ignores: ['.svelte-kit/', 'dist/', 'build/'] },
-  // Existing `eslint-disable` comments target rules this config does not enable
-  // yet; they stay put for whenever the `recommended` preset is turned on.
-  { linterOptions: { reportUnusedDisableDirectives: 'off' } },
-  ...svelte.configs.base,
+  ...svelte.configs.recommended,
+  ...svelte.configs.prettier,
   {
     files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
     languageOptions: {
@@ -24,6 +19,15 @@ export default ts.config(
     },
     rules: {
       'svelte/prefer-attribute-interpolation': 'error',
+
+      // Matches the consuming app, and makes the `eslint-disable` comments this
+      // package already carries for it meaningful.
+      'no-useless-assignment': 'warn',
+
+      // Components here take `href` as a prop and cannot resolve it: the target
+      // belongs to whichever app mounts them, and may well be external. The rule
+      // stays on in the consuming app, which does own its routes.
+      'svelte/no-navigation-without-resolve': 'off',
     },
   }
 );

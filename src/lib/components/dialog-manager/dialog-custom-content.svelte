@@ -3,7 +3,8 @@
 
   let { data: initialData, contentSnippet, resolve, close }: CustomProps<T, R> = $props();
 
-  // svelte-ignore state_referenced_locally -- intentionally captures initial value as own reactive copy
+  // intentionally captures initial value as own reactive copy
+  // svelte-ignore state_referenced_locally
   let data: T = $state(initialData as T);
 
   const renderProps: DialogRenderProps<T, R> = $derived({
