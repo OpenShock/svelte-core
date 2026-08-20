@@ -23,7 +23,7 @@
 	},
 	"files": [
 		"src/lib",
-		"!src/lib/**/*.test.ts"
+		"!src/lib/**/*.test.*"
 	],
 	"sideEffects": [
 		"**/*.css"
