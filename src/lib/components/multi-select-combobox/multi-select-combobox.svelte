@@ -70,7 +70,7 @@
         <Command.List>
           <Command.Empty>{noMatchText}</Command.Empty>
           <Command.Group>
-            {#each options as option}
+            {#each options as option (option.value)}
               <Command.Item
                 value={option.value}
                 keywords={[option.value, option.label]}
