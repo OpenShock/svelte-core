@@ -1,6 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve -- href comes from validation result, already a full URL */
-
   import { Input } from '@openshock/svelte-core/components/ui/input/index.js';
   import * as InputGroup from '@openshock/svelte-core/components/ui/input-group/index.js';
   import type { AnyComponent } from '@openshock/svelte-core/types/AnyComponent.js';

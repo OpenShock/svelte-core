@@ -26,7 +26,7 @@
 
     <polygon
       points="0,-2 -2,0 0,2 2,0"
-      transform={`translate(${percent}, 2)`}
+      transform="translate({percent}, 2)"
       fill="white"
       stroke="black"
       stroke-width="0.2"

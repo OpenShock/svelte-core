@@ -3,8 +3,6 @@ allowBuilds:
 blockExoticSubdeps: true
 minimumReleaseAge: 4320 # 3 days
 minimumReleaseAgeExcludePrune: true
-minimumReleaseAgeExclude:
-  - cookie@0.7.0
 overrides:
   cookie@<0.7.0: ^0.7.0
 
