@@ -15,11 +15,16 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo --watch",
 		"lint": "prettier --check .",
+		"lint:package": "publint --strict",
 		"format": "prettier --write .",
 		"update-shadcn": "node scripts/update-shadcn.js",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run"
 	},
+	"files": [
+		"src/lib",
+		"!src/lib/**/*.test.ts"
+	],
 	"sideEffects": [
 		"**/*.css"
 	],
@@ -34,11 +39,7 @@
 		},
 		"./theme.css": "./src/lib/theme.css",
 		"./package.json": "./package.json",
-		"./*": [
-			"./src/lib/*",
-			"./src/lib/*/index.ts",
-			"./src/lib/*/index.js"
-		]
+		"./*": "./src/lib/*"
 	},
 	"peerDependencies": {
 		"@internationalized/date": "^3.12.2",
@@ -80,7 +81,6 @@
 		"@lucide/svelte": "^1.28.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/kit": "^2.70.2",
-		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"@tailwindcss/vite": "^4.3.3",
 		"@typescript/native": "npm:typescript@~7.0.2",
