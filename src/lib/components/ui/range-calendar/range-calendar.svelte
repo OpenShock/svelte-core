@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
-  import * as RangeCalendar from './index.js';
-  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
-  import type { ButtonVariant } from '@openshock/svelte-core/components/ui/button/index.js';
-  import type { Snippet } from 'svelte';
   import { isEqualMonth, type DateValue } from '@internationalized/date';
+  import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
+  import type { ButtonVariant } from '@openshock/svelte-core/components/ui/button/index.js';
+  import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
+  import * as RangeCalendar from './index.js';
+  import type { Snippet } from 'svelte';
 
   let {
     ref = $bindable(null),
@@ -46,7 +46,7 @@
   {weekdayFormat}
   {disableDaysOutsideMonth}
   class={cn(
-    'p-2 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(7)] bg-background group/calendar p-3 [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
+    'group/calendar bg-background p-2 p-3 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(7)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
     className
   )}
   {locale}

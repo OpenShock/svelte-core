@@ -122,7 +122,7 @@
   id={id || picker}
   name={name || picker}
   class={cn(
-    'focus:bg-accent focus:text-accent-foreground w-12 text-center font-mono text-base tabular-nums caret-transparent [&::-webkit-inner-spin-button]:appearance-none',
+    'w-12 text-center font-mono text-base tabular-nums caret-transparent focus:bg-accent focus:text-accent-foreground [&::-webkit-inner-spin-button]:appearance-none',
     className
   )}
   value={value || calculatedValue}

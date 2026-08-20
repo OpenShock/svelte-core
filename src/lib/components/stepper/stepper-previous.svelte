@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { buttonVariants } from '@openshock/svelte-core/components/ui/button/index.js';
-  import { getStepperRootContext } from './stepper.svelte.js';
+  import { getStepperRootContext } from './stepper-state.svelte.js';
   import type { StepperPreviousProps } from './types.js';
 
   let {

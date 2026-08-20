@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
+  import MoreHorizontalIcon from '@lucide/svelte/icons/more-horizontal';
   import {
     cn,
     type WithElementRef,
     type WithoutChildren,
   } from '@openshock/svelte-core/utils/shadcn.js';
-  import MoreHorizontalIcon from '@lucide/svelte/icons/more-horizontal';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   let {
     ref = $bindable(null),
@@ -19,7 +19,7 @@
   data-slot="breadcrumb-ellipsis"
   role="presentation"
   aria-hidden="true"
-  class={cn('size-5 [&>svg]:size-4 flex items-center justify-center', className)}
+  class={cn('flex size-5 items-center justify-center [&>svg]:size-4', className)}
   {...restProps}
 >
   <MoreHorizontalIcon />

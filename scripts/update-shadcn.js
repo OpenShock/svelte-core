@@ -104,7 +104,10 @@ patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
 
 // Slider: add cursor-w-resize to thumb
 patch(path.join(UI_DIR, 'slider/slider.svelte'), [
-  [/select-none disabled:pointer/, 'cursor-w-resize select-none disabled:pointer'],
+  [
+    /transition-\[color,box-shadow\] select-none/,
+    'transition-[color,box-shadow] cursor-w-resize select-none',
+  ],
 ]);
 
 // Toggle group: suppress state_referenced_locally warnings
@@ -115,6 +118,12 @@ patch(path.join(UI_DIR, 'toggle-group/toggle-group.svelte'), [
 // Final format and check
 console.log('Final format...');
 run('pnpm run format');
+
+// svelte-check caches generated .ts files per source file under
+// .svelte-kit/.svelte-check and never prunes them. A component dropped from
+// UI_DIR therefore keeps getting checked from the cache and fails on imports
+// whose sources no longer exist, so wipe the cache before checking.
+fs.rmSync(path.join('.svelte-kit', '.svelte-check'), { recursive: true, force: true });
 
 console.log('Running checks...');
 run('pnpm run check');

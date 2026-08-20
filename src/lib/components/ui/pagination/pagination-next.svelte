@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Pagination as PaginationPrimitive } from 'bits-ui';
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
-  import { buttonVariants } from '@openshock/svelte-core/components/ui/button/index.js';
   import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+  import { buttonVariants } from '@openshock/svelte-core/components/ui/button/index.js';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   let {
     ref = $bindable(null),

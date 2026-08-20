@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { HTMLTableAttributes } from 'svelte/elements';
   import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
+  import type { HTMLTableAttributes } from 'svelte/elements';
 
   let {
     ref = $bindable(null),

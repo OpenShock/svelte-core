@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import { Command as CommandPrimitive } from 'bits-ui';
+  import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
   export type CommandRootApi = CommandPrimitive.Root;
 
@@ -21,7 +21,7 @@
   bind:ref
   data-slot="command"
   class={cn(
-    'bg-popover text-popover-foreground rounded-xl! p-1 flex size-full flex-col overflow-hidden',
+    'flex size-full flex-col overflow-hidden rounded-xl! bg-popover p-1 text-popover-foreground',
     className
   )}
   {...restProps}

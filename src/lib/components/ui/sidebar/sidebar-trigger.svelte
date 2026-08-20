@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import PanelLeftIcon from '@lucide/svelte/icons/panel-left';
+  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
-  import type { ComponentProps } from 'svelte';
   import { useSidebar } from './context.svelte.js';
+  import type { ComponentProps } from 'svelte';
 
   let {
     ref = $bindable(null),

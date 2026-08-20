@@ -28,6 +28,6 @@
   </div>
 
   {#if subtitle}
-    <p class="text-muted-foreground mt-1">{subtitle}</p>
+    <p class="mt-1 text-muted-foreground">{subtitle}</p>
   {/if}
 </div>
