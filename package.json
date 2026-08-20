@@ -131,8 +131,8 @@
 	"devDependencies": {
 		"@internationalized/date": "^3.12.3",
 		"@lucide/svelte": "^1.31.0",
-		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/kit": "^2.70.2",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
 		"@sveltejs/vite-plugin-svelte": "^7.3.0",
 		"@tailwindcss/vite": "^4.3.3",
 		"@typescript/native": "npm:typescript@~7.0.2",
