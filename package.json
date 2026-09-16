@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "git+https://github.com/OpenShock/svelte-core.git"
 	},
-	"packageManager": "pnpm@11.22.0",
+	"packageManager": "pnpm@12.4.1",
 	"scripts": {
 		"dev": "vite dev",
 		"preview": "vite preview",
@@ -54,6 +54,7 @@
 		"./components/ui/button": "./src/lib/components/ui/button/index.ts",
 		"./components/ui/calendar": "./src/lib/components/ui/calendar/index.ts",
 		"./components/ui/card": "./src/lib/components/ui/card/index.ts",
+		"./components/ui/chart": "./src/lib/components/ui/chart/index.ts",
 		"./components/ui/checkbox": "./src/lib/components/ui/checkbox/index.ts",
 		"./components/ui/collapsible": "./src/lib/components/ui/collapsible/index.ts",
 		"./components/ui/command": "./src/lib/components/ui/command/index.ts",
@@ -100,6 +101,7 @@
 		"bits-ui": "^2.18.1",
 		"clsx": "^2.1.1",
 		"formsnap": "^2.0.1",
+		"layerchart": "^2.5.0",
 		"svelte": "^5.56.1",
 		"svelte-sonner": "^1.1.1",
 		"sveltekit-superforms": "^2.30.1",
@@ -113,6 +115,9 @@
 			"optional": true
 		},
 		"formsnap": {
+			"optional": true
+		},
+		"layerchart": {
 			"optional": true
 		},
 		"svelte-sonner": {
@@ -141,6 +146,7 @@
 		"eslint": "^10.10.0",
 		"eslint-plugin-svelte": "^3.23.0",
 		"formsnap": "^2.0.1",
+		"layerchart": "^2.5.0",
 		"prettier": "~3.9.6",
 		"prettier-plugin-organize-imports": "~4.3.0",
 		"prettier-plugin-svelte": "~4.1.1",
