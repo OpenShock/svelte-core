@@ -12,5 +12,6 @@
     "lib": "@openshock/svelte-core"
   },
   "typescript": true,
-  "registry": "https://shadcn-svelte.com/registry"
+  "registry": "https://shadcn-svelte.com/registry",
+  "style": "nova"
 }

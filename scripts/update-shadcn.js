@@ -51,9 +51,26 @@ for (const dep of UNWANTED_DEPS) {
   }
 }
 
+// On Windows, prettier rewriting hundreds of freshly generated files in a burst
+// makes watchers (editor language servers, antivirus) briefly lock some of them,
+// failing with `UNKNOWN: unknown error, open`. The lock clears within a second and
+// a rerun only has to write the leftovers, so retry instead of failing.
+function format() {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      run('pnpm run format');
+      return;
+    } catch (error) {
+      if (attempt >= 3) throw error;
+      console.log(`Formatting failed (attempt ${attempt}), retrying...`);
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1000);
+    }
+  }
+}
+
 // Format to reduce diff noise
 console.log('Formatting...');
-run('pnpm run format');
+format();
 
 // Apply custom modifications
 console.log('Applying custom modifications...');
@@ -77,15 +94,11 @@ function patch(filePath, replacements) {
   fs.writeFileSync(filePath, source);
 }
 
-// Sidebar: ease-in-out and duration-300
-patch(path.join(UI_DIR, 'sidebar/sidebar.svelte'), [
-  [/duration-200 ease-linear/g, 'duration-300 ease-in-out'],
-]);
+// Sidebar: ease-in-out instead of ease-linear
+patch(path.join(UI_DIR, 'sidebar/sidebar.svelte'), [[/ease-linear/g, 'ease-in-out']]);
 
-// Sidebar submenu: ml-* instead of mx-*, pl-* instead of px-*
-patch(path.join(UI_DIR, 'sidebar/sidebar-menu-sub.svelte'), [
-  [/mx-3\.5(.*)px-2\.5/g, 'ml-3.5$1pl-2.5'],
-]);
+// Sidebar menu: nova ships gap-0, which makes hover/active highlights touch
+patch(path.join(UI_DIR, 'sidebar/sidebar-menu.svelte'), [[/\bgap-0\b/, 'gap-1']]);
 
 // Sonner: source the theme from our own color-scheme store instead of
 // mode-watcher. The shadcn registry imports `mode` from mode-watcher and uses
@@ -102,14 +115,6 @@ patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
   [/theme=\{mode\.current\}/, 'theme={colorScheme.value}'],
 ]);
 
-// Slider: add cursor-w-resize to thumb
-patch(path.join(UI_DIR, 'slider/slider.svelte'), [
-  [
-    /transition-\[color,box-shadow\] select-none/,
-    'transition-[color,box-shadow] cursor-w-resize select-none',
-  ],
-]);
-
 // Toggle group: suppress state_referenced_locally warnings
 patch(path.join(UI_DIR, 'toggle-group/toggle-group.svelte'), [
   [/(\n[ \t]*)setToggleGroupCtx/, '$1// svelte-ignore state_referenced_locally$1setToggleGroupCtx'],
@@ -117,7 +122,7 @@ patch(path.join(UI_DIR, 'toggle-group/toggle-group.svelte'), [
 
 // Final format and check
 console.log('Final format...');
-run('pnpm run format');
+format();
 
 // svelte-check caches generated .ts files per source file under
 // .svelte-kit/.svelte-check and never prunes them. A component dropped from
