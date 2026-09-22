@@ -23,7 +23,7 @@
   data-slot="sidebar-trigger"
   variant="ghost"
   size="icon-sm"
-  class={cn('cn-sidebar-trigger', className)}
+  class={cn(className)}
   type="button"
   onclick={(e) => {
     onclick?.(e);
@@ -31,6 +31,6 @@
   }}
   {...restProps}
 >
-  <PanelLeftIcon />
+  <PanelLeftIcon class="cn-rtl-flip" />
   <span class="sr-only">Toggle Sidebar</span>
 </Button>
