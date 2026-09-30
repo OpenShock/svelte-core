@@ -94,8 +94,10 @@ function patch(filePath, replacements) {
   fs.writeFileSync(filePath, source);
 }
 
-// Sidebar: ease-in-out instead of ease-linear
-patch(path.join(UI_DIR, 'sidebar/sidebar.svelte'), [[/ease-linear/g, 'ease-in-out']]);
+// Sidebar: ease-in-out instead of ease-linear, and a slower 300ms collapse
+patch(path.join(UI_DIR, 'sidebar/sidebar.svelte'), [
+  [/duration-200 ease-linear/g, 'duration-300 ease-in-out'],
+]);
 
 // Sidebar menu: nova ships gap-0, which makes hover/active highlights touch
 patch(path.join(UI_DIR, 'sidebar/sidebar-menu.svelte'), [[/\bgap-0\b/, 'gap-1']]);
@@ -113,6 +115,14 @@ patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
     "$1import { colorScheme } from '@openshock/svelte-core/state/color-scheme-state.svelte.js';",
   ],
   [/theme=\{mode\.current\}/, 'theme={colorScheme.value}'],
+]);
+
+// Slider: add cursor-w-resize to the thumb
+patch(path.join(UI_DIR, 'slider/slider.svelte'), [
+  [
+    /transition-\[color,box-shadow\] select-none/,
+    'transition-[color,box-shadow] cursor-w-resize select-none',
+  ],
 ]);
 
 // Toggle group: the registry writes `--gap` with a template literal, which trips
