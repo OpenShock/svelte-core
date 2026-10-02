@@ -17,15 +17,9 @@ export function isTruthy(value: boolean | number | string | null | undefined): b
   if (typeof value === 'boolean') return value;
   if (typeof value === 'number') return value === 1;
   if (typeof value !== 'string') return false;
+  if (value == '1') return true;
 
-  switch (value.toLowerCase()) {
-    case '1':
-    case 'true':
-    case 'yes':
-    case 'y':
-    case 'on':
-      return true;
-    default:
-      return false;
-  }
+  value = value.toLowerCase();
+
+  return value === 'true' || value === 'yes' || value === 'y' || value === 'on';
 }
