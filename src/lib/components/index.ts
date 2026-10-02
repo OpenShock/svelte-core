@@ -6,5 +6,7 @@ export { default as DotGrid } from './DotGrid.svelte';
 export { default as EmptyState } from './EmptyState.svelte';
 export { default as Keyboard } from './Keyboard.svelte';
 export { default as LightSwitch } from './LightSwitch.svelte';
+export { default as PageError } from './PageError.svelte';
 export { default as PageHeader } from './PageHeader.svelte';
+export { default as PageLoading } from './PageLoading.svelte';
 export { default as TableActionMenu } from './TableActionMenu.svelte';
