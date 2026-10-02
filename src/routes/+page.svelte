@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Input } from '$lib/components/ui/input';
-  import { Toaster } from '$lib/components/ui/sonner';
+  import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
+  import { Input } from '@openshock/svelte-core/components/ui/input/index.js';
+  import { Toaster } from '@openshock/svelte-core/components/ui/sonner/index.js';
   import { toast } from 'svelte-sonner';
 </script>
 

@@ -94,8 +94,10 @@ function patch(filePath, replacements) {
   fs.writeFileSync(filePath, source);
 }
 
-// Sidebar: ease-in-out instead of ease-linear
-patch(path.join(UI_DIR, 'sidebar/sidebar.svelte'), [[/ease-linear/g, 'ease-in-out']]);
+// Sidebar: ease-in-out instead of ease-linear, and a slower 300ms collapse
+patch(path.join(UI_DIR, 'sidebar/sidebar.svelte'), [
+  [/duration-200 ease-linear/g, 'duration-300 ease-in-out'],
+]);
 
 // Sidebar menu: nova ships gap-0, which makes hover/active highlights touch
 patch(path.join(UI_DIR, 'sidebar/sidebar-menu.svelte'), [[/\bgap-0\b/, 'gap-1']]);
@@ -115,9 +117,27 @@ patch(path.join(UI_DIR, 'sonner/sonner.svelte'), [
   [/theme=\{mode\.current\}/, 'theme={colorScheme.value}'],
 ]);
 
-// Toggle group: suppress state_referenced_locally warnings
+// Slider: add cursor-w-resize to the thumb
+patch(path.join(UI_DIR, 'slider/slider.svelte'), [
+  [
+    /transition-\[color,box-shadow\] select-none/,
+    'transition-[color,box-shadow] cursor-w-resize select-none',
+  ],
+]);
+
+// Toggle group: the registry writes `--gap` with a template literal, which trips
+// `svelte/prefer-attribute-interpolation`.
 patch(path.join(UI_DIR, 'toggle-group/toggle-group.svelte'), [
-  [/(\n[ \t]*)setToggleGroupCtx/, '$1// svelte-ignore state_referenced_locally$1setToggleGroupCtx'],
+  [/style=\{`--gap: \$\{spacing\}`\}/, 'style="--gap: {spacing}"'],
+]);
+
+// Chart tooltip: the registry carries `eslint-disable` comments for
+// `@typescript-eslint/no-explicit-any`, but eslint.config.js never registers the
+// typescript-eslint rules, so eslint errors on the unknown rule name. Strip them
+// rather than widen the lint config, which would newly flag our `_`-prefixed
+// placeholder params across the package.
+patch(path.join(UI_DIR, 'chart/chart-tooltip.svelte'), [
+  [/[ \t]*\/\/[ \t]*eslint-disable-next-line @typescript-eslint\/no-explicit-any\n/g, ''],
 ]);
 
 // Final format and check

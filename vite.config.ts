@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitest/config';
 
@@ -13,9 +14,8 @@ export default defineConfig({
           filename.split(/[/\\]/).includes('node_modules') ? undefined : true,
       },
 
-      // Passing options to sveltekit() makes SvelteKit ignore svelte.config.js
-      // entirely, so the kit config (adapter + aliases) must live here. These are
-      // KitConfig keys flattened to the top level — they are not nested under a
+      // SvelteKit 3 removed svelte.config.js, so all kit config lives here. These
+      // are KitConfig keys flattened to the top level — they are not nested under a
       // `kit` key (sveltekit() splits known kit options out of this object itself).
 
       // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
@@ -24,13 +24,10 @@ export default defineConfig({
       adapter: adapter(),
 
       // svelte-core is consumed (and consumes itself) by its own package name so
-      // the same specifiers resolve in every app that pulls it in. This alias maps
-      // that name to the source so standalone dev/check and the shadcn-svelte CLI
-      // (see components.json) can resolve it to a folder.
-      alias: {
-        '@openshock/svelte-core': 'src/lib',
-        '@openshock/svelte-core/*': 'src/lib/*',
-      },
+      // the same specifiers resolve in every app that pulls it in. That now resolves
+      // through this package's own `exports` field rather than a `config.alias`
+      // entry, which SvelteKit 3 deprecated in favour of subpath imports.
+      preprocess: vitePreprocess(),
     }),
   ],
   test: {

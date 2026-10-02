@@ -26,9 +26,7 @@ A few are optional and only needed if you use the component that pulls them in (
 
 `@tanstack/table-core` → data-table,
 
-`vaul-svelte` → drawer,
-
-`formsnap` + `sveltekit-superforms` → form
+`vaul-svelte` → drawer
 
 ).
 
