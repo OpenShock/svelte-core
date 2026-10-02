@@ -17,6 +17,43 @@ function run(command, options = {}) {
   execSync(command, { stdio: 'inherit', shell: true, ...options });
 }
 
+// The paths the regen deletes and the CLI recreates.
+const REGEN_PATHS = [UI_DIR, path.join(HOOKS_DIR, 'is-mobile.svelte.ts')];
+
+// A failure between the delete and the CLI's writes leaves ui/ empty, so the
+// recovery is `git checkout`. That can only restore what was committed: refuse to
+// run with local edits under REGEN_PATHS rather than risk eating them. The regen
+// wants a clean slate anyway — its "review the git diff" workflow cannot tell
+// generated output from edits that were already there.
+function assertRegenPathsClean() {
+  const dirty = execSync(`git status --porcelain -- ${REGEN_PATHS.join(' ')}`, {
+    encoding: 'utf-8',
+    shell: true,
+  }).trim();
+
+  if (dirty) {
+    console.error('Uncommitted changes in the paths this script regenerates:');
+    console.error(dirty);
+    console.error('\nCommit or stash them first.');
+    process.exit(1);
+  }
+}
+
+// Undo the delete. `git checkout` restores the tracked files; `git clean` drops
+// whatever a partial CLI run left behind. Both are scoped to REGEN_PATHS, which
+// assertRegenPathsClean() verified held nothing but committed content.
+function restoreRegenPaths() {
+  const paths = REGEN_PATHS.join(' ');
+  try {
+    run(`git checkout -- ${paths}`);
+    run(`git clean -fdq -- ${paths}`);
+  } catch {
+    console.error(`Restore failed. Recover manually with: git checkout -- ${paths}`);
+  }
+}
+
+assertRegenPathsClean();
+
 // Collect shadcn component names
 const components = fs
   .readdirSync(UI_DIR, { withFileTypes: true })
@@ -37,9 +74,18 @@ for (const name of components) {
 }
 fs.rmSync(path.join(HOOKS_DIR, 'is-mobile.svelte.ts'), { force: true });
 
-// Re-add all components
+// Re-add all components. Past this point ui/ is empty, so a CLI failure (a stale
+// components.json, an unreachable registry) has to put it back before bailing out
+// — the later steps are safe to fail loudly, since by then there is regenerated
+// output worth inspecting.
 console.log('Re-adding components via shadcn CLI...');
-run(`pnpm dlx shadcn-svelte@latest add --yes --overwrite ${components.join(' ')}`);
+try {
+  run(`pnpm dlx shadcn-svelte@latest add --yes --overwrite ${components.join(' ')}`);
+} catch (error) {
+  console.error('\nshadcn CLI failed. Restoring the deleted components from git...');
+  restoreRegenPaths();
+  throw error;
+}
 
 // Remove unwanted dependencies
 console.log('Cleaning up dependencies...');

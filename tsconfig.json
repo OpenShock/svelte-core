@@ -5,7 +5,21 @@
     "module": "ESNext",
     "rewriteRelativeImportExtensions": true,
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+
+    // Node and Vite resolve the `@openshock/svelte-core` self-imports in src/lib
+    // through this package's own `exports` field, so these mappings are redundant
+    // for typechecking. They exist for the shadcn-svelte CLI: it resolves the
+    // components.json aliases by first consulting tsconfig `paths`, then the
+    // `exports` of each entry in `dependencies`/`devDependencies` — a list that
+    // never contains the package itself, so a self-referencing alias is
+    // unresolvable without them and `pnpm run update-shadcn` aborts with
+    // "Invalid import alias found". SvelteKit used to generate these from
+    // `config.alias`, which is deprecated in SvelteKit 3.
+    "paths": {
+      "@openshock/svelte-core": ["./src/lib"],
+      "@openshock/svelte-core/*": ["./src/lib/*"]
+    }
   },
   "include": ["src", "*"]
 }
