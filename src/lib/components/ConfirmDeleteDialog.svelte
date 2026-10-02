@@ -39,6 +39,8 @@
     try {
       await onConfirm();
       open = false;
+    } catch {
+      // onConfirm reports its own errors; stay open so the user can retry.
     } finally {
       pending = false;
     }
