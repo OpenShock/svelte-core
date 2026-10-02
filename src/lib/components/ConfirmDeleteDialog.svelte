@@ -14,7 +14,7 @@
     /**
      * Return the request's promise. The dialog awaits it, blocks repeat
      * confirms while it is in flight, and closes itself once it resolves.
-     * If it rejects, the dialog stays open so the user can retry.
+     * Handle errors inside it; a rejection is only logged.
      */
     onConfirm: () => void | Promise<unknown>;
     /** Optional extra content between the header and the action row. */
@@ -39,8 +39,8 @@
     try {
       await onConfirm();
       open = false;
-    } catch {
-      // onConfirm reports its own errors; stay open so the user can retry.
+    } catch (error) {
+      console.error(error);
     } finally {
       pending = false;
     }
