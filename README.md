@@ -74,10 +74,15 @@ initCoreI18n({ getLocale, setLocale });
 ```
 
 To recompile this package's messages as part of your dev server and build, add a second
-plugin instance pointing at this package's project:
+plugin instance pointing at this package's project. Pass `outdir` explicitly: the plugin
+resolves the config file's relative `outdir` against _your_ Vite root, so without it the
+output would land in, and overwrite, your own `src/lib/paraglide`.
 
 ```ts
-paraglideVitePlugin({ project: './packages/svelte-core/project.inlang' });
+paraglideVitePlugin({
+  project: './packages/svelte-core/project.inlang',
+  outdir: './packages/svelte-core/src/lib/paraglide',
+});
 ```
 
 **Apps without i18n** (the firmware captive portal) change nothing and get English. The
