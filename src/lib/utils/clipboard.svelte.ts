@@ -1,25 +1,20 @@
+import { m } from '@openshock/svelte-core/paraglide/messages.js';
 import { onDestroy } from 'svelte';
 import { toast } from 'svelte-sonner';
-
-const DEFAULT_SUCCESS_MESSAGE = 'Copied to clipboard';
-const DEFAULT_ERROR_MESSAGE = 'Failed to copy to clipboard';
 
 /**
  * Writes text to the clipboard and toasts the outcome. Fire-and-forget — use
  * when no reactive feedback is needed. For a reactive `copied` flag, use the
  * `Clipboard` class.
  */
-export async function copyToClipboard(
-  text: string,
-  successMessage: string = DEFAULT_SUCCESS_MESSAGE
-): Promise<boolean> {
+export async function copyToClipboard(text: string, successMessage?: string): Promise<boolean> {
   try {
     await navigator.clipboard.writeText(text);
-    toast.success(successMessage);
+    toast.success(successMessage ?? m.clipboard_copied_toast());
     return true;
   } catch {
     // Insecure context, permission denied, tab not focused, etc.
-    toast.error(DEFAULT_ERROR_MESSAGE);
+    toast.error(m.clipboard_failed_toast());
     return false;
   }
 }

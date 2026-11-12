@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import {
     getPasswordStrength,
     type PasswordStrengthLevel,
@@ -11,13 +12,13 @@
 
   let { password }: Props = $props();
 
-  const strengthLabels: Record<PasswordStrengthLevel, string> = {
-    none: 'None',
-    very_weak: 'Very weak',
-    weak: 'Weak',
-    fair: 'Fair',
-    strong: 'Strong',
-    very_strong: 'Very strong',
+  const strengthLabels: Record<PasswordStrengthLevel, () => string> = {
+    none: m.password_strength_none,
+    very_weak: m.password_strength_very_weak,
+    weak: m.password_strength_weak,
+    fair: m.password_strength_fair,
+    strong: m.password_strength_strong,
+    very_strong: m.password_strength_very_strong,
   };
 
   let { percent, level, color } = $derived(getPasswordStrength(password));
@@ -25,8 +26,8 @@
 
 <div aria-hidden="true">
   <div class="flex flex-row items-center space-x-1 text-xs">
-    <p class="text-gray-400">Password strength:</p>
-    <p class={twTextColor[color]}>{strengthLabels[level]}</p>
+    <p class="text-gray-400">{m.password_strength_label()}</p>
+    <p class={twTextColor[color]}>{strengthLabels[level]()}</p>
   </div>
 
   <!-- SVG Meter -->

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import {
     DateFormatter,
     type DateValue,
@@ -80,7 +81,7 @@
     )}
   >
     <CalendarIcon />
-    {date ? df.format(date.toDate()) : 'Pick a date'}
+    {date ? df.format(date.toDate()) : m.date_pick()}
   </Popover.Trigger>
   <Popover.Content bind:ref={contentRef} class="w-auto p-0">
     <div class="flex border-b p-2">

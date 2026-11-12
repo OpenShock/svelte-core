@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Time } from '@internationalized/date';
   import { Label } from '@openshock/svelte-core/components/ui/label/index.js';
   import { cn } from '@openshock/svelte-core/utils/index.js';
@@ -30,7 +31,7 @@
 <div class={cn('flex items-center gap-2', view === 'dotted' && 'gap-1')}>
   <div class="grid gap-1 text-center">
     {#if view === 'labels'}
-      <Label for="hours" class="text-xs">Hours</Label>
+      <Label for="hours" class="text-xs">{m.time_hours()}</Label>
     {/if}
 
     <TimePickerInput
@@ -48,7 +49,7 @@
 
   <div class="grid gap-1 text-center">
     {#if view === 'labels'}
-      <Label for="minutes" class="text-xs">Minutes</Label>
+      <Label for="minutes" class="text-xs">{m.time_minutes()}</Label>
     {/if}
 
     <TimePickerInput
@@ -68,7 +69,7 @@
   {#if showSeconds}
     <div class="grid gap-1 text-center">
       {#if view === 'labels'}
-        <Label for="seconds" class="text-xs">Seconds</Label>
+        <Label for="seconds" class="text-xs">{m.time_seconds()}</Label>
       {/if}
 
       <TimePickerInput

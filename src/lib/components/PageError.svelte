@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import { cn } from '@openshock/svelte-core/utils/index.js';
 
@@ -11,7 +12,7 @@
     class?: string;
   }
 
-  let { message, onRetry, retryLabel = 'Try again', class: className }: Props = $props();
+  let { message, onRetry, retryLabel = m.common_try_again(), class: className }: Props = $props();
 </script>
 
 <div class={cn('flex w-full flex-col items-center gap-3 py-12', className)}>
