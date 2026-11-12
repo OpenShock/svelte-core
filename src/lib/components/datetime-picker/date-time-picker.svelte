@@ -14,25 +14,30 @@
   import { cn } from '@openshock/svelte-core/utils/index.js';
   import TimePicker from './time-picker.svelte';
 
-  const df = new DateFormatter('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hourCycle: 'h23',
-  });
-
   let contentRef = $state<HTMLElement | null>(null);
   let dateValue = $state<DateValue>();
 
   let {
     date = $bindable<ZonedDateTime>(),
     setDate,
+    locale = 'en-US',
   }: {
     date?: ZonedDateTime;
     setDate?: (date: DateValue) => void;
+    /** BCP 47 tag used to format the selected date and the calendar. */
+    locale?: string;
   } = $props();
+
+  const df = $derived(
+    new DateFormatter(locale, {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hourCycle: 'h23',
+    })
+  );
 
   let time = $state(new Time(date?.hour ?? 0, date?.minute ?? 0));
 
@@ -82,6 +87,6 @@
       <TimePicker bind:time setTime={(time) => time && setTime(time)} />
     </div>
 
-    <Calendar {onValueChange} type="single" bind:value={dateValue} />
+    <Calendar {onValueChange} {locale} type="single" bind:value={dateValue} />
   </Popover.Content>
 </Popover.Root>
