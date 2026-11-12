@@ -54,6 +54,45 @@ Then import components by subpath:
 <Button>Click me</Button>
 ```
 
+## Localization
+
+The strings this package renders itself (dialog and pagination buttons, screen-reader
+labels, validation messages) live in `messages/{locale}.json` and are compiled with
+[Paraglide JS](https://paraglidejs.com) into `src/lib/paraglide/` by `pnpm install`
+(the `prepare` script) and `pnpm run check`. The compiled runtime uses only the
+`baseLocale` strategy: this package never detects the locale on its own.
+
+**Apps with Paraglide** hand over their own runtime once per environment, before any
+component renders. Locales this package has no catalog for fall back to English.
+
+```ts
+// hooks.server.ts and hooks.client.ts
+import { getLocale, setLocale } from '$lib/paraglide/runtime.js';
+import { initCoreI18n } from '@openshock/svelte-core/i18n';
+
+initCoreI18n({ getLocale, setLocale });
+```
+
+To recompile this package's messages as part of your dev server and build, add a second
+plugin instance pointing at this package's project:
+
+```ts
+paraglideVitePlugin({ project: './packages/svelte-core/project.inlang' });
+```
+
+**Apps without i18n** (the firmware captive portal) change nothing and get English. The
+other locales ride along in the bundle, but only for the messages the app's components
+actually use: a few hundred bytes gzipped for the portal's current handful.
+
+Validators in `inputvalidation/` return a `ValidationIssue` (a `code` plus that code's
+inputs, see `types/ValidationResult.ts`) instead of text. `getValidationMessage()` resolves
+it in the current locale; `TextInput` does that for you. Apps pass their own already
+localized text as `message` instead.
+
+Adding a string: put the key in `messages/en.json`, run `pnpm run i18n:compile`, then use
+`m.key()` from `@openshock/svelte-core/paraglide/messages.js`. Keep the locale list in
+`project.inlang/settings.json` in sync with the cloud frontend.
+
 ## Develop
 
 This package is consumed **from source** as a `workspace:*` dependency — its
