@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Schließen",
   "common_cancel": "Abbrechen",
   "common_confirm": "Bestätigen",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Sehr stark",
 
   "validation_password_checking": "Passwort wird geprüft...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Passwort in {count} Datenleck gefunden",
-        "countPlural=other": "Passwort in {count} Datenlecks gefunden"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Passwort in {{count}} Datenleck gefunden",
+  "validation_password_pwned_other": "Passwort in {{count}} Datenlecks gefunden",
   "validation_password_too_short": "Passwort ist zu kurz",
-  "validation_password_too_long": "Ernsthaft? {length} Zeichen? Das ist zu viel",
+  "validation_password_too_long": "Ernsthaft? {{length}} Zeichen? Das ist zu viel",
   "validation_password_only_whitespace": "Passwort darf nicht nur aus Leerzeichen bestehen",
   "validation_password_edge_whitespace": "Passwort darf nicht mit Leerzeichen beginnen oder enden",
   "validation_passwords_mismatch": "Passwörter stimmen nicht überein",

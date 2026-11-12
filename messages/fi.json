@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Sulje",
   "common_cancel": "Peruuta",
   "common_confirm": "Vahvista",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Erittäin vahva",
 
   "validation_password_checking": "Tarkistetaan salasanaa...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Salasana löytyi {count} tietovuodosta",
-        "countPlural=other": "Salasana löytyi {count} tietovuodosta"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Salasana löytyi {{count}} tietovuodosta",
+  "validation_password_pwned_other": "Salasana löytyi {{count}} tietovuodosta",
   "validation_password_too_short": "Salasana on liian lyhyt",
-  "validation_password_too_long": "Oikeasti? {length} merkkiä? Se on liikaa",
+  "validation_password_too_long": "Oikeasti? {{length}} merkkiä? Se on liikaa",
   "validation_password_only_whitespace": "Salasana ei voi koostua pelkistä välilyönneistä",
   "validation_password_edge_whitespace": "Salasana ei voi alkaa tai päättyä välilyöntiin",
   "validation_passwords_mismatch": "Salasanat eivät täsmää",

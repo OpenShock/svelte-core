@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Sluiten",
   "common_cancel": "Annuleren",
   "common_confirm": "Bevestigen",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Zeer sterk",
 
   "validation_password_checking": "Wachtwoord controleren...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Wachtwoord aangetroffen in {count} datalek",
-        "countPlural=other": "Wachtwoord aangetroffen in {count} datalekken"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Wachtwoord aangetroffen in {{count}} datalek",
+  "validation_password_pwned_other": "Wachtwoord aangetroffen in {{count}} datalekken",
   "validation_password_too_short": "Wachtwoord is te kort",
-  "validation_password_too_long": "Serieus? {length} tekens? Dat is te veel",
+  "validation_password_too_long": "Serieus? {{length}} tekens? Dat is te veel",
   "validation_password_only_whitespace": "Wachtwoord mag niet alleen uit spaties bestaan",
   "validation_password_edge_whitespace": "Wachtwoord mag niet beginnen of eindigen met een spatie",
   "validation_passwords_mismatch": "Wachtwoorden komen niet overeen",

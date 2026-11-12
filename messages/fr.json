@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Fermer",
   "common_cancel": "Annuler",
   "common_confirm": "Confirmer",
@@ -54,18 +52,11 @@
   "password_strength_very_strong": "Très forte",
 
   "validation_password_checking": "Vérification du mot de passe...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Mot de passe détecté dans {count} fuite de données",
-        "countPlural=other": "Mot de passe détecté dans {count} fuites de données"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Mot de passe détecté dans {{count}} fuite de données",
+  "validation_password_pwned_many": "Mot de passe détecté dans {{count}} fuites de données",
+  "validation_password_pwned_other": "Mot de passe détecté dans {{count}} fuites de données",
   "validation_password_too_short": "Le mot de passe est trop court",
-  "validation_password_too_long": "Sérieusement ? {length} caractères ? C'est trop",
+  "validation_password_too_long": "Sérieusement ? {{length}} caractères ? C'est trop",
   "validation_password_only_whitespace": "Le mot de passe ne peut pas être composé uniquement d'espaces",
   "validation_password_edge_whitespace": "Le mot de passe ne peut pas commencer ou se terminer par un espace",
   "validation_passwords_mismatch": "Les mots de passe ne correspondent pas",

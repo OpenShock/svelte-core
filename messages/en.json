@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Close",
   "common_cancel": "Cancel",
   "common_confirm": "Confirm",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Very strong",
 
   "validation_password_checking": "Checking password...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Password detected in {count} data breach",
-        "countPlural=other": "Password detected in {count} data breaches"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Password detected in {{count}} data breach",
+  "validation_password_pwned_other": "Password detected in {{count}} data breaches",
   "validation_password_too_short": "Password is too short",
-  "validation_password_too_long": "Seriously? {length} characters? That's too much",
+  "validation_password_too_long": "Seriously? {{length}} characters? That's too much",
   "validation_password_only_whitespace": "Password cannot consist of only whitespaces",
   "validation_password_edge_whitespace": "Password cannot start or end with whitespace",
   "validation_passwords_mismatch": "Passwords do not match",

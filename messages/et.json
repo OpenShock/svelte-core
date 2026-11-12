@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Sulge",
   "common_cancel": "Tühista",
   "common_confirm": "Kinnita",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Väga tugev",
 
   "validation_password_checking": "Parooli kontrollimine...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Parool leiti {count} andmelekkest",
-        "countPlural=other": "Parool leiti {count} andmelekkest"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Parool leiti {{count}} andmelekkest",
+  "validation_password_pwned_other": "Parool leiti {{count}} andmelekkest",
   "validation_password_too_short": "Parool on liiga lühike",
-  "validation_password_too_long": "Tõsiselt? {length} märki? See on liiga palju",
+  "validation_password_too_long": "Tõsiselt? {{length}} märki? See on liiga palju",
   "validation_password_only_whitespace": "Parool ei saa koosneda ainult tühikutest",
   "validation_password_edge_whitespace": "Parool ei saa alata ega lõppeda tühikuga",
   "validation_passwords_mismatch": "Paroolid ei ühti",

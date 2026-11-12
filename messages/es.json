@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Cerrar",
   "common_cancel": "Cancelar",
   "common_confirm": "Confirmar",
@@ -54,18 +52,11 @@
   "password_strength_very_strong": "Muy fuerte",
 
   "validation_password_checking": "Comprobando contraseña...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Contraseña detectada en {count} filtración de datos",
-        "countPlural=other": "Contraseña detectada en {count} filtraciones de datos"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Contraseña detectada en {{count}} filtración de datos",
+  "validation_password_pwned_many": "Contraseña detectada en {{count}} filtraciones de datos",
+  "validation_password_pwned_other": "Contraseña detectada en {{count}} filtraciones de datos",
   "validation_password_too_short": "La contraseña es demasiado corta",
-  "validation_password_too_long": "¿En serio? ¿{length} caracteres? Es demasiado",
+  "validation_password_too_long": "¿En serio? ¿{{length}} caracteres? Es demasiado",
   "validation_password_only_whitespace": "La contraseña no puede consistir solo en espacios",
   "validation_password_edge_whitespace": "La contraseña no puede empezar ni terminar con espacios",
   "validation_passwords_mismatch": "Las contraseñas no coinciden",

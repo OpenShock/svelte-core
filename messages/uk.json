@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Закрити",
   "common_cancel": "Скасувати",
   "common_confirm": "Підтвердити",
@@ -54,20 +52,12 @@
   "password_strength_very_strong": "Дуже надійний",
 
   "validation_password_checking": "Перевірка пароля...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Пароль знайдено в {count} витоку даних",
-        "countPlural=few": "Пароль знайдено в {count} витоках даних",
-        "countPlural=many": "Пароль знайдено в {count} витоках даних",
-        "countPlural=other": "Пароль знайдено в {count} витоках даних"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Пароль знайдено в {{count}} витоку даних",
+  "validation_password_pwned_few": "Пароль знайдено в {{count}} витоках даних",
+  "validation_password_pwned_many": "Пароль знайдено в {{count}} витоках даних",
+  "validation_password_pwned_other": "Пароль знайдено в {{count}} витоках даних",
   "validation_password_too_short": "Пароль надто короткий",
-  "validation_password_too_long": "Серйозно? {length} символів? Це занадто",
+  "validation_password_too_long": "Серйозно? {{length}} символів? Це занадто",
   "validation_password_only_whitespace": "Пароль не може складатися лише з пробілів",
   "validation_password_edge_whitespace": "Пароль не може починатися або закінчуватися пробілом",
   "validation_passwords_mismatch": "Паролі не збігаються",

@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Close~",
   "common_cancel": "Nevermind~",
   "common_confirm": "Yep, do it!",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Vewy stwong!!",
 
   "validation_password_checking": "Checking your password...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "This password showed up in {count} data bweach ;w;",
-        "countPlural=other": "This password showed up in {count} data bweaches ;w;"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "This password showed up in {{count}} data bweach ;w;",
+  "validation_password_pwned_other": "This password showed up in {{count}} data bweaches ;w;",
   "validation_password_too_short": "Password is too smol",
-  "validation_password_too_long": "Seriouswy? {length} characters? That's too many",
+  "validation_password_too_long": "Seriouswy? {{length}} characters? That's too many",
   "validation_password_only_whitespace": "Password can't be onwy spaces, silly",
   "validation_password_edge_whitespace": "Password can't start or end with a space~",
   "validation_passwords_mismatch": "Passwords don't match ;w;",

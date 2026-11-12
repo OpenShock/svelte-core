@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "閉じる",
   "common_cancel": "キャンセル",
   "common_confirm": "確認",
@@ -54,17 +52,9 @@
   "password_strength_very_strong": "非常に強い",
 
   "validation_password_checking": "パスワードを確認中...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=other": "このパスワードは {count} 件のデータ漏洩で検出されました"
-      }
-    }
-  ],
+  "validation_password_pwned_other": "このパスワードは {{count}} 件のデータ漏洩で検出されました",
   "validation_password_too_short": "パスワードが短すぎます",
-  "validation_password_too_long": "本気ですか？{length} 文字？長すぎます",
+  "validation_password_too_long": "本気ですか？{{length}} 文字？長すぎます",
   "validation_password_only_whitespace": "パスワードを空白のみにすることはできません",
   "validation_password_edge_whitespace": "パスワードの先頭または末尾に空白は使えません",
   "validation_passwords_mismatch": "パスワードが一致しません",

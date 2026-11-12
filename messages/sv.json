@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Stäng",
   "common_cancel": "Avbryt",
   "common_confirm": "Bekräfta",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Mycket starkt",
 
   "validation_password_checking": "Kontrollerar lösenord...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Lösenordet hittades i {count} dataläcka",
-        "countPlural=other": "Lösenordet hittades i {count} dataläckor"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Lösenordet hittades i {{count}} dataläcka",
+  "validation_password_pwned_other": "Lösenordet hittades i {{count}} dataläckor",
   "validation_password_too_short": "Lösenordet är för kort",
-  "validation_password_too_long": "Seriöst? {length} tecken? Det är för mycket",
+  "validation_password_too_long": "Seriöst? {{length}} tecken? Det är för mycket",
   "validation_password_only_whitespace": "Lösenordet kan inte bestå av enbart blanksteg",
   "validation_password_edge_whitespace": "Lösenordet kan inte börja eller sluta med blanksteg",
   "validation_passwords_mismatch": "Lösenorden matchar inte",

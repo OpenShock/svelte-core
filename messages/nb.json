@@ -1,6 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-
   "common_close": "Lukk",
   "common_cancel": "Avbryt",
   "common_confirm": "Bekreft",
@@ -54,18 +52,10 @@
   "password_strength_very_strong": "Veldig sterkt",
 
   "validation_password_checking": "Sjekker passord...",
-  "validation_password_pwned": [
-    {
-      "declarations": ["input count", "local countPlural = count: plural"],
-      "selectors": ["countPlural"],
-      "match": {
-        "countPlural=one": "Passordet er funnet i {count} datalekkasje",
-        "countPlural=other": "Passordet er funnet i {count} datalekkasjer"
-      }
-    }
-  ],
+  "validation_password_pwned_one": "Passordet er funnet i {{count}} datalekkasje",
+  "validation_password_pwned_other": "Passordet er funnet i {{count}} datalekkasjer",
   "validation_password_too_short": "Passordet er for kort",
-  "validation_password_too_long": "Seriøst? {length} tegn? Det er for mye",
+  "validation_password_too_long": "Seriøst? {{length}} tegn? Det er for mye",
   "validation_password_only_whitespace": "Passordet kan ikke bestå av bare mellomrom",
   "validation_password_edge_whitespace": "Passordet kan ikke starte eller slutte med mellomrom",
   "validation_passwords_mismatch": "Passordene er ikke like",
