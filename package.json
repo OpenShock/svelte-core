@@ -11,8 +11,9 @@
 	"scripts": {
 		"dev": "vite dev",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo",
+		"prepare": "paraglide-js compile --silent && svelte-kit sync || echo ''",
+		"i18n:compile": "paraglide-js compile --silent",
+		"check": "paraglide-js compile --silent && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo --watch",
 		"lint": "prettier --check . && eslint .",
 		"lint:package": "publint --strict",
@@ -23,7 +24,9 @@
 	},
 	"files": [
 		"src/lib",
-		"!src/lib/**/*.test.*"
+		"!src/lib/**/*.test.*",
+		"messages",
+		"project.inlang"
 	],
 	"sideEffects": [
 		"**/*.css"
@@ -88,6 +91,7 @@
 		"./components/ui/toggle-group": "./src/lib/components/ui/toggle-group/index.ts",
 		"./components/ui/tooltip": "./src/lib/components/ui/tooltip/index.ts",
 		"./hooks": "./src/lib/hooks/index.ts",
+		"./i18n": "./src/lib/i18n/index.ts",
 		"./inputvalidation": "./src/lib/inputvalidation/index.ts",
 		"./typeguards": "./src/lib/typeguards/index.ts",
 		"./types": "./src/lib/types/index.ts",
@@ -125,12 +129,15 @@
 		}
 	},
 	"devDependencies": {
+		"@inlang/paraglide-js": "^3.2.1",
+		"@inlang/plugin-message-format": "^4.6.0",
 		"@internationalized/date": "^3.12.4",
 		"@lucide/svelte": "^1.61.0",
 		"@sveltejs/adapter-auto": "^8.0.0",
 		"@sveltejs/kit": "^3.1.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@tailwindcss/vite": "^4.3.3",
+		"@types/node": "^26.6.6",
 		"@typescript/native": "npm:typescript@~7.0.2",
 		"bits-ui": "2.20.2",
 		"clsx": "^2.1.1",

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Lukk",
+  "common_cancel": "Avbryt",
+  "common_confirm": "Bekreft",
+  "common_ok": "OK",
+  "common_delete": "Slett",
+  "common_try_again": "Prøv igjen",
+  "common_previous": "Forrige",
+  "common_next": "Neste",
+  "common_more": "Mer",
+  "common_open_menu": "Åpne meny",
+
+  "pagination_label": "Sidenavigasjon",
+  "pagination_go_to_previous_page": "Gå til forrige side",
+  "pagination_go_to_next_page": "Gå til neste side",
+  "pagination_more_pages": "Flere sider",
+  "breadcrumb_label": "Brødsmulesti",
+
+  "sidebar_title": "Sidepanel",
+  "sidebar_mobile_description": "Viser sidepanelet for mobil.",
+  "sidebar_toggle": "Vis eller skjul sidepanel",
+
+  "command_palette_title": "Kommandopalett",
+  "command_palette_description": "Søk etter en kommando å kjøre...",
+
+  "color_scheme_toggle": "Bytt tema",
+  "color_scheme_dark": "Mørk",
+  "color_scheme_light": "Lys",
+  "color_scheme_system": "System",
+  "light_mode_dialog_title": "Bytt til lys modus",
+  "light_mode_dialog_warning_label": "Advarsel:",
+  "light_mode_dialog_description": "Du er i ferd med å bytte til lys modus.",
+  "light_mode_dialog_question": "Er du sikker på at du vil gjøre dette?",
+  "light_mode_dialog_confirm": "Jeg er villig til å ta risikoen",
+  "light_mode_darkreader_warning": "DarkReader er aktivert, lys modus vil ikke ha noen effekt!",
+
+  "clipboard_copy": "Kopier til utklippstavlen",
+  "clipboard_copied": "Kopiert",
+  "clipboard_copied_toast": "Kopiert til utklippstavlen",
+  "clipboard_failed_toast": "Kunne ikke kopiere til utklippstavlen",
+
+  "password_show": "Vis passord",
+  "password_hide": "Skjul passord",
+  "password_forgot": "Glemt passordet?",
+  "password_pwned_whats_this": "Hva er dette?",
+  "password_strength_label": "Passordstyrke:",
+  "password_strength_none": "Ingen",
+  "password_strength_very_weak": "Veldig svakt",
+  "password_strength_weak": "Svakt",
+  "password_strength_fair": "Middels",
+  "password_strength_strong": "Sterkt",
+  "password_strength_very_strong": "Veldig sterkt",
+
+  "validation_password_checking": "Sjekker passord...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Passordet er funnet i {count} datalekkasje",
+        "countPlural=other": "Passordet er funnet i {count} datalekkasjer"
+      }
+    }
+  ],
+  "validation_password_too_short": "Passordet er for kort",
+  "validation_password_too_long": "Seriøst? {length} tegn? Det er for mye",
+  "validation_password_only_whitespace": "Passordet kan ikke bestå av bare mellomrom",
+  "validation_password_edge_whitespace": "Passordet kan ikke starte eller slutte med mellomrom",
+  "validation_passwords_mismatch": "Passordene er ikke like",
+  "validation_email_invalid": "Ugyldig e-postadresse",
+  "validation_email_alias": "E-postadressen kan ikke inneholde aliaser",
+
+  "time_hours": "Timer",
+  "time_minutes": "Minutter",
+  "time_seconds": "Sekunder",
+  "date_pick": "Velg en dato"
+}

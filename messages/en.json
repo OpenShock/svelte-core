@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Close",
+  "common_cancel": "Cancel",
+  "common_confirm": "Confirm",
+  "common_ok": "OK",
+  "common_delete": "Delete",
+  "common_try_again": "Try again",
+  "common_previous": "Previous",
+  "common_next": "Next",
+  "common_more": "More",
+  "common_open_menu": "Open menu",
+
+  "pagination_label": "Pagination",
+  "pagination_go_to_previous_page": "Go to previous page",
+  "pagination_go_to_next_page": "Go to next page",
+  "pagination_more_pages": "More pages",
+  "breadcrumb_label": "Breadcrumb",
+
+  "sidebar_title": "Sidebar",
+  "sidebar_mobile_description": "Displays the mobile sidebar.",
+  "sidebar_toggle": "Toggle sidebar",
+
+  "command_palette_title": "Command palette",
+  "command_palette_description": "Search for a command to run...",
+
+  "color_scheme_toggle": "Toggle theme",
+  "color_scheme_dark": "Dark",
+  "color_scheme_light": "Light",
+  "color_scheme_system": "System",
+  "light_mode_dialog_title": "Switch to light mode",
+  "light_mode_dialog_warning_label": "Warning:",
+  "light_mode_dialog_description": "You are about to switch to light mode.",
+  "light_mode_dialog_question": "Are you sure you want to do this?",
+  "light_mode_dialog_confirm": "I am willing to take the risk",
+  "light_mode_darkreader_warning": "DarkReader is enabled, activating light mode will have no effect!",
+
+  "clipboard_copy": "Copy to clipboard",
+  "clipboard_copied": "Copied",
+  "clipboard_copied_toast": "Copied to clipboard",
+  "clipboard_failed_toast": "Failed to copy to clipboard",
+
+  "password_show": "Show password",
+  "password_hide": "Hide password",
+  "password_forgot": "Forgot your password?",
+  "password_pwned_whats_this": "What's this?",
+  "password_strength_label": "Password strength:",
+  "password_strength_none": "None",
+  "password_strength_very_weak": "Very weak",
+  "password_strength_weak": "Weak",
+  "password_strength_fair": "Fair",
+  "password_strength_strong": "Strong",
+  "password_strength_very_strong": "Very strong",
+
+  "validation_password_checking": "Checking password...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Password detected in {count} data breach",
+        "countPlural=other": "Password detected in {count} data breaches"
+      }
+    }
+  ],
+  "validation_password_too_short": "Password is too short",
+  "validation_password_too_long": "Seriously? {length} characters? That's too much",
+  "validation_password_only_whitespace": "Password cannot consist of only whitespaces",
+  "validation_password_edge_whitespace": "Password cannot start or end with whitespace",
+  "validation_passwords_mismatch": "Passwords do not match",
+  "validation_email_invalid": "Invalid email",
+  "validation_email_alias": "Email cannot contain aliases",
+
+  "time_hours": "Hours",
+  "time_minutes": "Minutes",
+  "time_seconds": "Seconds",
+  "date_pick": "Pick a date"
+}

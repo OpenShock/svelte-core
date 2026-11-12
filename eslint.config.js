@@ -4,7 +4,7 @@ import ts from 'typescript-eslint';
 // Formatting is prettier's job — `svelte.configs.prettier` turns off the rules
 // that would fight it, and `pnpm run lint` runs both tools.
 export default ts.config(
-  { ignores: ['.svelte-kit/', 'dist/', 'build/'] },
+  { ignores: ['.svelte-kit/', 'dist/', 'build/', 'src/lib/paraglide/'] },
   ...svelte.configs.recommended,
   ...svelte.configs.prettier,
   {

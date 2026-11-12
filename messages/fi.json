@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Sulje",
+  "common_cancel": "Peruuta",
+  "common_confirm": "Vahvista",
+  "common_ok": "OK",
+  "common_delete": "Poista",
+  "common_try_again": "Yritä uudelleen",
+  "common_previous": "Edellinen",
+  "common_next": "Seuraava",
+  "common_more": "Lisää",
+  "common_open_menu": "Avaa valikko",
+
+  "pagination_label": "Sivutus",
+  "pagination_go_to_previous_page": "Siirry edelliselle sivulle",
+  "pagination_go_to_next_page": "Siirry seuraavalle sivulle",
+  "pagination_more_pages": "Lisää sivuja",
+  "breadcrumb_label": "Navigointipolku",
+
+  "sidebar_title": "Sivupalkki",
+  "sidebar_mobile_description": "Näyttää mobiilisivupalkin.",
+  "sidebar_toggle": "Näytä tai piilota sivupalkki",
+
+  "command_palette_title": "Komentopaletti",
+  "command_palette_description": "Etsi suoritettava komento...",
+
+  "color_scheme_toggle": "Vaihda teemaa",
+  "color_scheme_dark": "Tumma",
+  "color_scheme_light": "Vaalea",
+  "color_scheme_system": "Järjestelmä",
+  "light_mode_dialog_title": "Vaihda vaaleaan tilaan",
+  "light_mode_dialog_warning_label": "Varoitus:",
+  "light_mode_dialog_description": "Olet vaihtamassa vaaleaan tilaan.",
+  "light_mode_dialog_question": "Haluatko varmasti tehdä tämän?",
+  "light_mode_dialog_confirm": "Olen valmis ottamaan riskin",
+  "light_mode_darkreader_warning": "DarkReader on käytössä, vaalean tilan ottaminen käyttöön ei vaikuta mitenkään!",
+
+  "clipboard_copy": "Kopioi leikepöydälle",
+  "clipboard_copied": "Kopioitu",
+  "clipboard_copied_toast": "Kopioitu leikepöydälle",
+  "clipboard_failed_toast": "Leikepöydälle kopiointi epäonnistui",
+
+  "password_show": "Näytä salasana",
+  "password_hide": "Piilota salasana",
+  "password_forgot": "Unohditko salasanasi?",
+  "password_pwned_whats_this": "Mikä tämä on?",
+  "password_strength_label": "Salasanan vahvuus:",
+  "password_strength_none": "Ei mitään",
+  "password_strength_very_weak": "Erittäin heikko",
+  "password_strength_weak": "Heikko",
+  "password_strength_fair": "Kohtalainen",
+  "password_strength_strong": "Vahva",
+  "password_strength_very_strong": "Erittäin vahva",
+
+  "validation_password_checking": "Tarkistetaan salasanaa...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Salasana löytyi {count} tietovuodosta",
+        "countPlural=other": "Salasana löytyi {count} tietovuodosta"
+      }
+    }
+  ],
+  "validation_password_too_short": "Salasana on liian lyhyt",
+  "validation_password_too_long": "Oikeasti? {length} merkkiä? Se on liikaa",
+  "validation_password_only_whitespace": "Salasana ei voi koostua pelkistä välilyönneistä",
+  "validation_password_edge_whitespace": "Salasana ei voi alkaa tai päättyä välilyöntiin",
+  "validation_passwords_mismatch": "Salasanat eivät täsmää",
+  "validation_email_invalid": "Virheellinen sähköpostiosoite",
+  "validation_email_alias": "Sähköpostiosoite ei voi sisältää aliaksia",
+
+  "time_hours": "Tunnit",
+  "time_minutes": "Minuutit",
+  "time_seconds": "Sekunnit",
+  "date_pick": "Valitse päivä"
+}

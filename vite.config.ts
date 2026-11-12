@@ -1,3 +1,4 @@
+import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import adapter from '@sveltejs/adapter-auto';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
@@ -7,6 +8,9 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   plugins: [
     tailwindcss(),
+    // Compiler options live in project.inlang/paraglide.config.ts, shared with the
+    // `paraglide-js` CLI that `prepare` and `check` run.
+    paraglideVitePlugin({ project: './project.inlang' }),
     sveltekit({
       compilerOptions: {
         // Force runes mode for the project, except for libraries. Can be removed in svelte 6.

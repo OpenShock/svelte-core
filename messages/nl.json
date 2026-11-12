@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Sluiten",
+  "common_cancel": "Annuleren",
+  "common_confirm": "Bevestigen",
+  "common_ok": "OK",
+  "common_delete": "Verwijderen",
+  "common_try_again": "Opnieuw proberen",
+  "common_previous": "Vorige",
+  "common_next": "Volgende",
+  "common_more": "Meer",
+  "common_open_menu": "Menu openen",
+
+  "pagination_label": "Paginering",
+  "pagination_go_to_previous_page": "Ga naar vorige pagina",
+  "pagination_go_to_next_page": "Ga naar volgende pagina",
+  "pagination_more_pages": "Meer pagina's",
+  "breadcrumb_label": "Kruimelpad",
+
+  "sidebar_title": "Zijbalk",
+  "sidebar_mobile_description": "Toont de mobiele zijbalk.",
+  "sidebar_toggle": "Zijbalk in- of uitschakelen",
+
+  "command_palette_title": "Opdrachtenpalet",
+  "command_palette_description": "Zoek een opdracht om uit te voeren...",
+
+  "color_scheme_toggle": "Thema wisselen",
+  "color_scheme_dark": "Donker",
+  "color_scheme_light": "Licht",
+  "color_scheme_system": "Systeem",
+  "light_mode_dialog_title": "Overschakelen naar lichte modus",
+  "light_mode_dialog_warning_label": "Waarschuwing:",
+  "light_mode_dialog_description": "Je staat op het punt over te schakelen naar de lichte modus.",
+  "light_mode_dialog_question": "Weet je zeker dat je dit wilt doen?",
+  "light_mode_dialog_confirm": "Ik ben bereid het risico te nemen",
+  "light_mode_darkreader_warning": "DarkReader is ingeschakeld, de lichte modus heeft geen effect!",
+
+  "clipboard_copy": "Kopiëren naar klembord",
+  "clipboard_copied": "Gekopieerd",
+  "clipboard_copied_toast": "Gekopieerd naar klembord",
+  "clipboard_failed_toast": "Kopiëren naar klembord mislukt",
+
+  "password_show": "Wachtwoord tonen",
+  "password_hide": "Wachtwoord verbergen",
+  "password_forgot": "Wachtwoord vergeten?",
+  "password_pwned_whats_this": "Wat is dit?",
+  "password_strength_label": "Wachtwoordsterkte:",
+  "password_strength_none": "Geen",
+  "password_strength_very_weak": "Zeer zwak",
+  "password_strength_weak": "Zwak",
+  "password_strength_fair": "Redelijk",
+  "password_strength_strong": "Sterk",
+  "password_strength_very_strong": "Zeer sterk",
+
+  "validation_password_checking": "Wachtwoord controleren...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Wachtwoord aangetroffen in {count} datalek",
+        "countPlural=other": "Wachtwoord aangetroffen in {count} datalekken"
+      }
+    }
+  ],
+  "validation_password_too_short": "Wachtwoord is te kort",
+  "validation_password_too_long": "Serieus? {length} tekens? Dat is te veel",
+  "validation_password_only_whitespace": "Wachtwoord mag niet alleen uit spaties bestaan",
+  "validation_password_edge_whitespace": "Wachtwoord mag niet beginnen of eindigen met een spatie",
+  "validation_passwords_mismatch": "Wachtwoorden komen niet overeen",
+  "validation_email_invalid": "Ongeldig e-mailadres",
+  "validation_email_alias": "E-mailadres mag geen aliassen bevatten",
+
+  "time_hours": "Uren",
+  "time_minutes": "Minuten",
+  "time_seconds": "Seconden",
+  "date_pick": "Kies een datum"
+}

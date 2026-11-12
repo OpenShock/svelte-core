@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Close~",
+  "common_cancel": "Nevermind~",
+  "common_confirm": "Yep, do it!",
+  "common_ok": "Okie!",
+  "common_delete": "Delete *gulp*",
+  "common_try_again": "Try again!",
+  "common_previous": "Back~",
+  "common_next": "Next~",
+  "common_more": "Mowe~",
+  "common_open_menu": "Open menu~",
+
+  "pagination_label": "Page fwipper",
+  "pagination_go_to_previous_page": "Go back a page~",
+  "pagination_go_to_next_page": "Go forward a page~",
+  "pagination_more_pages": "Mowe pages~",
+  "breadcrumb_label": "Bweadcwumbs",
+
+  "sidebar_title": "Sidebaw",
+  "sidebar_mobile_description": "Shows the smol-screen sidebaw.",
+  "sidebar_toggle": "Toggle the sidebaw~",
+
+  "command_palette_title": "Command pawette",
+  "command_palette_description": "Look for a command to wun...",
+
+  "color_scheme_toggle": "Switch the vibes~",
+  "color_scheme_dark": "Dawk",
+  "color_scheme_light": "Bwight",
+  "color_scheme_system": "Whatever the system says",
+  "light_mode_dialog_title": "Switch to bwight mode?!",
+  "light_mode_dialog_warning_label": "Warning!!",
+  "light_mode_dialog_description": "You're about to switch to bwight mode.",
+  "light_mode_dialog_question": "Really really sure?",
+  "light_mode_dialog_confirm": "I accept the consequences owo",
+  "light_mode_darkreader_warning": "DarkReader is on, so bwight mode won't do anything, silly~",
+
+  "clipboard_copy": "Copy it~",
+  "clipboard_copied": "Copied! ♡",
+  "clipboard_copied_toast": "Copied to your clipboard! ♡",
+  "clipboard_failed_toast": "Oh no, couldn't copy that...",
+
+  "password_show": "Peek at password~",
+  "password_hide": "Hide password~",
+  "password_forgot": "Forgot your password? ;w;",
+  "password_pwned_whats_this": "Wat's this?",
+  "password_strength_label": "Password stwength:",
+  "password_strength_none": "Nothing",
+  "password_strength_very_weak": "Vewy weak ;w;",
+  "password_strength_weak": "Weak~",
+  "password_strength_fair": "Okay-ish",
+  "password_strength_strong": "Stwong!",
+  "password_strength_very_strong": "Vewy stwong!!",
+
+  "validation_password_checking": "Checking your password...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "This password showed up in {count} data bweach ;w;",
+        "countPlural=other": "This password showed up in {count} data bweaches ;w;"
+      }
+    }
+  ],
+  "validation_password_too_short": "Password is too smol",
+  "validation_password_too_long": "Seriouswy? {length} characters? That's too many",
+  "validation_password_only_whitespace": "Password can't be onwy spaces, silly",
+  "validation_password_edge_whitespace": "Password can't start or end with a space~",
+  "validation_passwords_mismatch": "Passwords don't match ;w;",
+  "validation_email_invalid": "That email looks wrong~",
+  "validation_email_alias": "Email can't have aliases, sowwy",
+
+  "time_hours": "Houws",
+  "time_minutes": "Minutes~",
+  "time_seconds": "Seconds~",
+  "date_pick": "Pick a day~"
+}

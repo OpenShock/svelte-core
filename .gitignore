@@ -28,3 +28,6 @@ vite.config.ts.timestamp-*
 
 # Misc
 *.local.*
+
+# Paraglide compile cache
+project.inlang/cache

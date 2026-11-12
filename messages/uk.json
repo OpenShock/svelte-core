@@ -1,0 +1,81 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Закрити",
+  "common_cancel": "Скасувати",
+  "common_confirm": "Підтвердити",
+  "common_ok": "OK",
+  "common_delete": "Видалити",
+  "common_try_again": "Спробувати ще",
+  "common_previous": "Назад",
+  "common_next": "Далі",
+  "common_more": "Більше",
+  "common_open_menu": "Відкрити меню",
+
+  "pagination_label": "Пагінація",
+  "pagination_go_to_previous_page": "Перейти на попередню сторінку",
+  "pagination_go_to_next_page": "Перейти на наступну сторінку",
+  "pagination_more_pages": "Більше сторінок",
+  "breadcrumb_label": "Навігаційний ланцюжок",
+
+  "sidebar_title": "Бічна панель",
+  "sidebar_mobile_description": "Показує мобільну бічну панель.",
+  "sidebar_toggle": "Перемкнути бічну панель",
+
+  "command_palette_title": "Палітра команд",
+  "command_palette_description": "Знайти команду для виконання...",
+
+  "color_scheme_toggle": "Перемкнути тему",
+  "color_scheme_dark": "Темна",
+  "color_scheme_light": "Світла",
+  "color_scheme_system": "Системна",
+  "light_mode_dialog_title": "Перейти на світлу тему",
+  "light_mode_dialog_warning_label": "Увага:",
+  "light_mode_dialog_description": "Ти збираєшся перейти на світлу тему.",
+  "light_mode_dialog_question": "Точно хочеш це зробити?",
+  "light_mode_dialog_confirm": "Я готовий піти на ризик",
+  "light_mode_darkreader_warning": "Увімкнено DarkReader, світла тема не матиме ефекту!",
+
+  "clipboard_copy": "Копіювати в буфер обміну",
+  "clipboard_copied": "Скопійовано",
+  "clipboard_copied_toast": "Скопійовано в буфер обміну",
+  "clipboard_failed_toast": "Не вдалося скопіювати в буфер обміну",
+
+  "password_show": "Показати пароль",
+  "password_hide": "Сховати пароль",
+  "password_forgot": "Не пам'ятаєш пароль?",
+  "password_pwned_whats_this": "Що це?",
+  "password_strength_label": "Надійність пароля:",
+  "password_strength_none": "Немає",
+  "password_strength_very_weak": "Дуже слабкий",
+  "password_strength_weak": "Слабкий",
+  "password_strength_fair": "Посередній",
+  "password_strength_strong": "Надійний",
+  "password_strength_very_strong": "Дуже надійний",
+
+  "validation_password_checking": "Перевірка пароля...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Пароль знайдено в {count} витоку даних",
+        "countPlural=few": "Пароль знайдено в {count} витоках даних",
+        "countPlural=many": "Пароль знайдено в {count} витоках даних",
+        "countPlural=other": "Пароль знайдено в {count} витоках даних"
+      }
+    }
+  ],
+  "validation_password_too_short": "Пароль надто короткий",
+  "validation_password_too_long": "Серйозно? {length} символів? Це занадто",
+  "validation_password_only_whitespace": "Пароль не може складатися лише з пробілів",
+  "validation_password_edge_whitespace": "Пароль не може починатися або закінчуватися пробілом",
+  "validation_passwords_mismatch": "Паролі не збігаються",
+  "validation_email_invalid": "Недійсна електронна адреса",
+  "validation_email_alias": "Електронна адреса не може містити псевдоніми",
+
+  "time_hours": "Години",
+  "time_minutes": "Хвилини",
+  "time_seconds": "Секунди",
+  "date_pick": "Обери дату"
+}

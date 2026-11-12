@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Stäng",
+  "common_cancel": "Avbryt",
+  "common_confirm": "Bekräfta",
+  "common_ok": "OK",
+  "common_delete": "Ta bort",
+  "common_try_again": "Försök igen",
+  "common_previous": "Föregående",
+  "common_next": "Nästa",
+  "common_more": "Mer",
+  "common_open_menu": "Öppna meny",
+
+  "pagination_label": "Sidnavigering",
+  "pagination_go_to_previous_page": "Gå till föregående sida",
+  "pagination_go_to_next_page": "Gå till nästa sida",
+  "pagination_more_pages": "Fler sidor",
+  "breadcrumb_label": "Sökväg",
+
+  "sidebar_title": "Sidopanel",
+  "sidebar_mobile_description": "Visar sidopanelen för mobil.",
+  "sidebar_toggle": "Visa eller dölj sidopanel",
+
+  "command_palette_title": "Kommandopalett",
+  "command_palette_description": "Sök efter ett kommando att köra...",
+
+  "color_scheme_toggle": "Byt tema",
+  "color_scheme_dark": "Mörkt",
+  "color_scheme_light": "Ljust",
+  "color_scheme_system": "System",
+  "light_mode_dialog_title": "Byt till ljust läge",
+  "light_mode_dialog_warning_label": "Varning:",
+  "light_mode_dialog_description": "Du är på väg att byta till ljust läge.",
+  "light_mode_dialog_question": "Är du säker på att du vill göra detta?",
+  "light_mode_dialog_confirm": "Jag är villig att ta risken",
+  "light_mode_darkreader_warning": "DarkReader är aktiverat, ljust läge kommer inte att ha någon effekt!",
+
+  "clipboard_copy": "Kopiera till urklipp",
+  "clipboard_copied": "Kopierat",
+  "clipboard_copied_toast": "Kopierat till urklipp",
+  "clipboard_failed_toast": "Det gick inte att kopiera till urklipp",
+
+  "password_show": "Visa lösenord",
+  "password_hide": "Dölj lösenord",
+  "password_forgot": "Glömt ditt lösenord?",
+  "password_pwned_whats_this": "Vad är detta?",
+  "password_strength_label": "Lösenordsstyrka:",
+  "password_strength_none": "Ingen",
+  "password_strength_very_weak": "Mycket svagt",
+  "password_strength_weak": "Svagt",
+  "password_strength_fair": "Okej",
+  "password_strength_strong": "Starkt",
+  "password_strength_very_strong": "Mycket starkt",
+
+  "validation_password_checking": "Kontrollerar lösenord...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Lösenordet hittades i {count} dataläcka",
+        "countPlural=other": "Lösenordet hittades i {count} dataläckor"
+      }
+    }
+  ],
+  "validation_password_too_short": "Lösenordet är för kort",
+  "validation_password_too_long": "Seriöst? {length} tecken? Det är för mycket",
+  "validation_password_only_whitespace": "Lösenordet kan inte bestå av enbart blanksteg",
+  "validation_password_edge_whitespace": "Lösenordet kan inte börja eller sluta med blanksteg",
+  "validation_passwords_mismatch": "Lösenorden matchar inte",
+  "validation_email_invalid": "Ogiltig e-postadress",
+  "validation_email_alias": "E-postadressen får inte innehålla alias",
+
+  "time_hours": "Timmar",
+  "time_minutes": "Minuter",
+  "time_seconds": "Sekunder",
+  "date_pick": "Välj ett datum"
+}

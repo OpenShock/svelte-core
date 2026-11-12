@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Cerrar",
+  "common_cancel": "Cancelar",
+  "common_confirm": "Confirmar",
+  "common_ok": "Aceptar",
+  "common_delete": "Eliminar",
+  "common_try_again": "Reintentar",
+  "common_previous": "Anterior",
+  "common_next": "Siguiente",
+  "common_more": "Más",
+  "common_open_menu": "Abrir menú",
+
+  "pagination_label": "Paginación",
+  "pagination_go_to_previous_page": "Ir a la página anterior",
+  "pagination_go_to_next_page": "Ir a la página siguiente",
+  "pagination_more_pages": "Más páginas",
+  "breadcrumb_label": "Ruta de navegación",
+
+  "sidebar_title": "Barra lateral",
+  "sidebar_mobile_description": "Muestra la barra lateral móvil.",
+  "sidebar_toggle": "Mostrar u ocultar la barra lateral",
+
+  "command_palette_title": "Paleta de comandos",
+  "command_palette_description": "Busca un comando para ejecutar...",
+
+  "color_scheme_toggle": "Cambiar tema",
+  "color_scheme_dark": "Oscuro",
+  "color_scheme_light": "Claro",
+  "color_scheme_system": "Sistema",
+  "light_mode_dialog_title": "Cambiar al modo claro",
+  "light_mode_dialog_warning_label": "Advertencia:",
+  "light_mode_dialog_description": "Estás a punto de cambiar al modo claro.",
+  "light_mode_dialog_question": "¿Seguro que quieres hacerlo?",
+  "light_mode_dialog_confirm": "Estoy dispuesto a asumir el riesgo",
+  "light_mode_darkreader_warning": "DarkReader está activado, ¡activar el modo claro no tendrá efecto!",
+
+  "clipboard_copy": "Copiar al portapapeles",
+  "clipboard_copied": "Copiado",
+  "clipboard_copied_toast": "Copiado al portapapeles",
+  "clipboard_failed_toast": "No se pudo copiar al portapapeles",
+
+  "password_show": "Mostrar contraseña",
+  "password_hide": "Ocultar contraseña",
+  "password_forgot": "¿Olvidaste tu contraseña?",
+  "password_pwned_whats_this": "¿Qué es esto?",
+  "password_strength_label": "Seguridad de la contraseña:",
+  "password_strength_none": "Ninguna",
+  "password_strength_very_weak": "Muy débil",
+  "password_strength_weak": "Débil",
+  "password_strength_fair": "Aceptable",
+  "password_strength_strong": "Fuerte",
+  "password_strength_very_strong": "Muy fuerte",
+
+  "validation_password_checking": "Comprobando contraseña...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Contraseña detectada en {count} filtración de datos",
+        "countPlural=other": "Contraseña detectada en {count} filtraciones de datos"
+      }
+    }
+  ],
+  "validation_password_too_short": "La contraseña es demasiado corta",
+  "validation_password_too_long": "¿En serio? ¿{length} caracteres? Es demasiado",
+  "validation_password_only_whitespace": "La contraseña no puede consistir solo en espacios",
+  "validation_password_edge_whitespace": "La contraseña no puede empezar ni terminar con espacios",
+  "validation_passwords_mismatch": "Las contraseñas no coinciden",
+  "validation_email_invalid": "Correo electrónico no válido",
+  "validation_email_alias": "El correo electrónico no puede contener alias",
+
+  "time_hours": "Horas",
+  "time_minutes": "Minutos",
+  "time_seconds": "Segundos",
+  "date_pick": "Elige una fecha"
+}
