@@ -17,7 +17,7 @@ export interface CoreI18nOptions {
    */
   getLocale: () => string;
   /** The app's `setLocale`. Optional: this package never changes the locale itself. */
-  setLocale?: (locale: Locale, options?: { reload?: boolean }) => void | Promise<void>;
+  setLocale?(locale: Locale, options?: { reload?: boolean }): void | Promise<void>;
 }
 
 /**
