@@ -29,17 +29,11 @@ export function validateEmail(value: string): ValidationResult | null {
   }
 
   if (!isEmailAddress(value)) {
-    return {
-      valid: false,
-      message: 'Invalid email',
-    };
+    return { valid: false, code: 'email_invalid' };
   }
 
   if (value.includes('+')) {
-    return {
-      valid: false,
-      message: 'Email cannot contain aliases',
-    };
+    return { valid: false, code: 'email_alias' };
   }
 
   return { valid: true };

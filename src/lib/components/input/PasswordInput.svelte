@@ -51,7 +51,8 @@
       if (pwnedCount > 0) {
         validationResult = {
           valid: false,
-          message: `Password detected in ${pwnedCount} data ${pwnedCount == 1 ? 'breach' : 'breaches'}`,
+          code: 'password_pwned',
+          count: pwnedCount,
           link: {
             text: "What's this?",
             href: 'https://haveibeenpwned.com/Passwords',
@@ -68,7 +69,7 @@
   }, 500);
 
   function checkHIBP(str: string) {
-    validationResult = { valid: false, message: 'Checking password...' };
+    validationResult = { valid: false, code: 'password_checking' };
     requestHIBP(str);
   }
 
