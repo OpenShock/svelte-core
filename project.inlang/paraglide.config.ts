@@ -8,6 +8,12 @@ import { defineConfig } from '@inlang/paraglide-js';
 export default defineConfig({
   outdir: './src/lib/paraglide',
   emitTsDeclarations: true,
+  // The compiler would drop a `.gitignore` with `*` into the outdir. npm honours
+  // nested ignore files when packing `files`, so that would strip the generated
+  // runtime from the published tarball. The repository-level .gitignore and
+  // .prettierignore cover the directory instead.
+  emitGitIgnore: false,
+  emitPrettierIgnore: false,
   // Pinned so the CLI (used by `prepare`/`check`) and the Vite plugin emit the same layout.
   outputStructure: 'message-modules',
   strategy: ['baseLocale'],
