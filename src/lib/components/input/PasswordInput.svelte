@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Eye, EyeOff } from '@lucide/svelte';
   import { checkPwnedCount } from '@openshock/svelte-core/api/pwnedPasswords.js';
   import TextInput from '@openshock/svelte-core/components/input/TextInput.svelte';
@@ -51,9 +52,10 @@
       if (pwnedCount > 0) {
         validationResult = {
           valid: false,
-          message: `Password detected in ${pwnedCount} data ${pwnedCount == 1 ? 'breach' : 'breaches'}`,
+          code: 'password_pwned',
+          count: pwnedCount,
           link: {
-            text: "What's this?",
+            text: m.password_pwned_whats_this(),
             href: 'https://haveibeenpwned.com/Passwords',
           },
         };
@@ -68,7 +70,7 @@
   }, 500);
 
   function checkHIBP(str: string) {
-    validationResult = { valid: false, message: 'Checking password...' };
+    validationResult = { valid: false, code: 'password_checking' };
     requestHIBP(str);
   }
 
@@ -135,7 +137,7 @@
       <FieldLabel for={id}>{label}</FieldLabel>
       {#if forgotHref}
         <a href={forgotHref} class="ms-auto text-sm underline-offset-4 hover:underline">
-          Forgot your password?
+          {m.password_forgot()}
         </a>
       {/if}
     </div>
@@ -147,7 +149,7 @@
       onclick={() => (valueShown = !valueShown)}
       variant="ghost"
       size="icon"
-      title={valueShown ? 'Hide password' : 'Show password'}
+      title={valueShown ? m.password_hide() : m.password_show()}
       aria-pressed={valueShown}
     >
       {#if valueShown}

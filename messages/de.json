@@ -1,0 +1,79 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "Schließen",
+  "common_cancel": "Abbrechen",
+  "common_confirm": "Bestätigen",
+  "common_ok": "OK",
+  "common_delete": "Löschen",
+  "common_try_again": "Erneut versuchen",
+  "common_previous": "Zurück",
+  "common_next": "Weiter",
+  "common_more": "Mehr",
+  "common_open_menu": "Menü öffnen",
+
+  "pagination_label": "Seitennavigation",
+  "pagination_go_to_previous_page": "Zur vorherigen Seite",
+  "pagination_go_to_next_page": "Zur nächsten Seite",
+  "pagination_more_pages": "Weitere Seiten",
+  "breadcrumb_label": "Brotkrumen-Navigation",
+
+  "sidebar_title": "Seitenleiste",
+  "sidebar_mobile_description": "Zeigt die mobile Seitenleiste an.",
+  "sidebar_toggle": "Seitenleiste umschalten",
+
+  "command_palette_title": "Befehlspalette",
+  "command_palette_description": "Suche nach einem auszuführenden Befehl...",
+
+  "color_scheme_toggle": "Design umschalten",
+  "color_scheme_dark": "Dunkel",
+  "color_scheme_light": "Hell",
+  "color_scheme_system": "System",
+  "light_mode_dialog_title": "Zum hellen Modus wechseln",
+  "light_mode_dialog_warning_label": "Warnung:",
+  "light_mode_dialog_description": "Du bist dabei, zum hellen Modus zu wechseln.",
+  "light_mode_dialog_question": "Möchtest du das wirklich tun?",
+  "light_mode_dialog_confirm": "Ich bin bereit, das Risiko einzugehen",
+  "light_mode_darkreader_warning": "DarkReader ist aktiv, der helle Modus hat keine Auswirkung!",
+
+  "clipboard_copy": "In die Zwischenablage kopieren",
+  "clipboard_copied": "Kopiert",
+  "clipboard_copied_toast": "In die Zwischenablage kopiert",
+  "clipboard_failed_toast": "Kopieren in die Zwischenablage fehlgeschlagen",
+
+  "password_show": "Passwort anzeigen",
+  "password_hide": "Passwort verbergen",
+  "password_forgot": "Passwort vergessen?",
+  "password_pwned_whats_this": "Was ist das?",
+  "password_strength_label": "Passwortstärke:",
+  "password_strength_none": "Keine",
+  "password_strength_very_weak": "Sehr schwach",
+  "password_strength_weak": "Schwach",
+  "password_strength_fair": "Mittel",
+  "password_strength_strong": "Stark",
+  "password_strength_very_strong": "Sehr stark",
+
+  "validation_password_checking": "Passwort wird geprüft...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=one": "Passwort in {count} Datenleck gefunden",
+        "countPlural=other": "Passwort in {count} Datenlecks gefunden"
+      }
+    }
+  ],
+  "validation_password_too_short": "Passwort ist zu kurz",
+  "validation_password_too_long": "Ernsthaft? {length} Zeichen? Das ist zu viel",
+  "validation_password_only_whitespace": "Passwort darf nicht nur aus Leerzeichen bestehen",
+  "validation_password_edge_whitespace": "Passwort darf nicht mit Leerzeichen beginnen oder enden",
+  "validation_passwords_mismatch": "Passwörter stimmen nicht überein",
+  "validation_email_invalid": "Ungültige E-Mail-Adresse",
+  "validation_email_alias": "E-Mail-Adresse darf keine Aliasse enthalten",
+
+  "time_hours": "Stunden",
+  "time_minutes": "Minuten",
+  "time_seconds": "Sekunden",
+  "date_pick": "Datum wählen"
+}

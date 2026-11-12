@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
   import { cn, type WithoutChildrenOrChild } from '@openshock/svelte-core/utils/shadcn.js';
   import Command from './command.svelte';
@@ -9,8 +10,8 @@
     open = $bindable(false),
     ref = $bindable(null),
     value = $bindable(''),
-    title = 'Command Palette',
-    description = 'Search for a command to run...',
+    title = m.command_palette_title(),
+    description = m.command_palette_description(),
     showCloseButton = false,
     portalProps,
     children,

@@ -6,6 +6,7 @@
     GetValResColor,
     type ValidationResult,
   } from '@openshock/svelte-core/types/ValidationResult.js';
+  import { getValidationMessage } from '@openshock/svelte-core/inputvalidation/validationMessage.js';
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
   import type { Snippet } from 'svelte';
   import type { ClipboardEventHandler, FocusEventHandler, FullAutoFill } from 'svelte/elements';
@@ -45,6 +46,10 @@
     onblur,
     onpaste,
   }: Props = $props();
+
+  const validationMessage = $derived(
+    validationResult ? getValidationMessage(validationResult) : undefined
+  );
 </script>
 
 <Field class="gap-2">
@@ -73,7 +78,7 @@
           {onblur}
           {onpaste}
           aria-invalid={validationResult ? !validationResult.valid : undefined}
-          aria-describedby={validationResult?.message ? validationId : undefined}
+          aria-describedby={validationMessage ? validationId : undefined}
         />
         <InputGroup.Addon align="inline-end">
           {@render after()}
@@ -92,7 +97,7 @@
         {onblur}
         {onpaste}
         aria-invalid={validationResult ? !validationResult.valid : undefined}
-        aria-describedby={validationResult?.message ? validationId : undefined}
+        aria-describedby={validationMessage ? validationId : undefined}
       />
     {/if}
     {#if popup}
@@ -104,7 +109,7 @@
       </div>
     {/if}
   </div>
-  {#if validationResult?.message}
+  {#if validationResult && validationMessage}
     <p
       id={validationId}
       class={cn('-mt-2! mb-2 h-4 truncate text-xs', twTextColor[GetValResColor(validationResult)])}
@@ -112,7 +117,7 @@
       aria-atomic="true"
       aria-live="polite"
     >
-      {validationResult.message}
+      {validationMessage}
       {#if validationResult.link}
         <!-- This must not be resolved, it in some cases points to external websites (HaveIBeenPwned) -->
         <a

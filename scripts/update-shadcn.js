@@ -186,6 +186,79 @@ patch(path.join(UI_DIR, 'chart/chart-tooltip.svelte'), [
   [/[ \t]*\/\/[ \t]*eslint-disable-next-line @typescript-eslint\/no-explicit-any\n/g, ''],
 ]);
 
+// i18n: the registry hardcodes English in a handful of places (sr-only labels,
+// aria-labels, pagination text, default titles). Route each through this
+// package's Paraglide catalog so consuming apps can translate them via
+// `initCoreI18n()`. New literals after a registry update: add a key to
+// messages/en.json and a row here. The patch() no-op check catches rows that
+// stopped matching.
+const M_IMPORT = "  import { m } from '@openshock/svelte-core/paraglide/messages.js';\n";
+const importM = [/^<script lang="ts">\n/m, `$&${M_IMPORT}`];
+const I18N_PATCHES = {
+  'dialog/dialog-content.svelte': [
+    [/<span class="sr-only">Close<\/span>/, '<span class="sr-only">{m.common_close()}</span>'],
+  ],
+  'dialog/dialog-footer.svelte': [[/>Close<\/Button>/, '>{m.common_close()}</Button>']],
+  'sheet/sheet-content.svelte': [
+    [/<span class="sr-only">Close<\/span>/, '<span class="sr-only">{m.common_close()}</span>'],
+  ],
+  'breadcrumb/breadcrumb.svelte': [
+    [/aria-label="breadcrumb"/, 'aria-label={m.breadcrumb_label()}'],
+  ],
+  'breadcrumb/breadcrumb-ellipsis.svelte': [
+    [/<span class="sr-only">More<\/span>/, '<span class="sr-only">{m.common_more()}</span>'],
+  ],
+  'pagination/pagination.svelte': [
+    [/aria-label="pagination"/, 'aria-label={m.pagination_label()}'],
+  ],
+  'pagination/pagination-ellipsis.svelte': [
+    [
+      /<span class="sr-only">More pages<\/span>/,
+      '<span class="sr-only">{m.pagination_more_pages()}</span>',
+    ],
+  ],
+  'pagination/pagination-next.svelte': [
+    [/aria-label="Go to next page"/, 'aria-label={m.pagination_go_to_next_page()}'],
+    [/>Next<\/span>/, '>{m.common_next()}</span>'],
+  ],
+  'pagination/pagination-next-button.svelte': [
+    [/aria-label="Go to next page"/, 'aria-label={m.pagination_go_to_next_page()}'],
+    [/>Next<\/span>/, '>{m.common_next()}</span>'],
+  ],
+  'pagination/pagination-previous.svelte': [
+    [/aria-label="Go to previous page"/, 'aria-label={m.pagination_go_to_previous_page()}'],
+    [/>Previous<\/span>/, '>{m.common_previous()}</span>'],
+  ],
+  'pagination/pagination-prev-button.svelte': [
+    [/aria-label="Go to previous page"/, 'aria-label={m.pagination_go_to_previous_page()}'],
+    [/>Previous<\/span>/, '>{m.common_previous()}</span>'],
+  ],
+  'sidebar/sidebar.svelte': [
+    [/<Sheet\.Title>Sidebar<\/Sheet\.Title>/, '<Sheet.Title>{m.sidebar_title()}</Sheet.Title>'],
+    [
+      /<Sheet\.Description>Displays the mobile sidebar\.<\/Sheet\.Description>/,
+      '<Sheet.Description>{m.sidebar_mobile_description()}</Sheet.Description>',
+    ],
+  ],
+  'sidebar/sidebar-trigger.svelte': [
+    [
+      /<span class="sr-only">Toggle Sidebar<\/span>/,
+      '<span class="sr-only">{m.sidebar_toggle()}</span>',
+    ],
+  ],
+  'sidebar/sidebar-rail.svelte': [[/="Toggle Sidebar"/g, '={m.sidebar_toggle()}']],
+  'command/command-dialog.svelte': [
+    [/title = 'Command Palette',/, 'title = m.command_palette_title(),'],
+    [
+      /description = 'Search for a command to run\.\.\.',/,
+      'description = m.command_palette_description(),',
+    ],
+  ],
+};
+for (const [file, replacements] of Object.entries(I18N_PATCHES)) {
+  patch(path.join(UI_DIR, file), [importM, ...replacements]);
+}
+
 // Final format and check
 console.log('Final format...');
 format();

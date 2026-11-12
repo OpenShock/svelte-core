@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
   import { Spinner } from '@openshock/svelte-core/components/ui/spinner/index.js';
@@ -8,7 +9,7 @@
     open: boolean;
     title: string;
     description: Snippet;
-    /** Button label. Defaults to "Delete". */
+    /** Button label. Defaults to the localized "Delete". */
     actionLabel?: string;
     cancelLabel?: string;
     /**
@@ -25,8 +26,8 @@
     open = $bindable(),
     title,
     description,
-    actionLabel = 'Delete',
-    cancelLabel = 'Cancel',
+    actionLabel = m.common_delete(),
+    cancelLabel = m.common_cancel(),
     onConfirm,
     children,
   }: Props = $props();

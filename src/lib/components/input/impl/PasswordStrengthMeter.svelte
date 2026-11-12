@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { getPasswordStrength } from '@openshock/svelte-core/inputvalidation/passwordValidator.js';
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
+  import {
+    getPasswordStrength,
+    type PasswordStrengthLevel,
+  } from '@openshock/svelte-core/inputvalidation/passwordValidator.js';
   import { twTextColor } from '@openshock/svelte-core/types/Tailwind.js';
 
   interface Props {
@@ -8,13 +12,22 @@
 
   let { password }: Props = $props();
 
-  let { percent, text, color } = $derived(getPasswordStrength(password));
+  const strengthLabels: Record<PasswordStrengthLevel, () => string> = {
+    none: m.password_strength_none,
+    very_weak: m.password_strength_very_weak,
+    weak: m.password_strength_weak,
+    fair: m.password_strength_fair,
+    strong: m.password_strength_strong,
+    very_strong: m.password_strength_very_strong,
+  };
+
+  let { percent, level, color } = $derived(getPasswordStrength(password));
 </script>
 
 <div aria-hidden="true">
   <div class="flex flex-row items-center space-x-1 text-xs">
-    <p class="text-gray-400">Password strength:</p>
-    <p class={twTextColor[color]}>{text}</p>
+    <p class="text-gray-400">{m.password_strength_label()}</p>
+    <p class={twTextColor[color]}>{strengthLabels[level]()}</p>
   </div>
 
   <!-- SVG Meter -->

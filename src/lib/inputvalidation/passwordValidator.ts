@@ -7,30 +7,21 @@ export function validatePassword(value: string): ValidationResult | null {
     return null;
   }
 
-  const result = {
-    valid: false,
-    message: '',
-  };
-
   if (value.length < 12) {
-    result.message = 'Password is too short';
-    return result;
+    return { valid: false, code: 'password_too_short' };
   }
 
   if (value.length > 256) {
-    result.message = `Seriously? ${value.length} characters? That's too much`;
-    return result;
+    return { valid: false, code: 'password_too_long', length: value.length };
   }
 
   const trimmedLength = value.trim().length;
   if (trimmedLength == 0) {
-    result.message = 'Password cannot consist of only whitespaces';
-    return result;
+    return { valid: false, code: 'password_only_whitespace' };
   }
 
   if (trimmedLength != value.length) {
-    result.message = 'Password cannot start or end with whitespace';
-    return result;
+    return { valid: false, code: 'password_edge_whitespace' };
   }
 
   return { valid: true };
@@ -45,48 +36,29 @@ export function validatePasswordMatch(
   }
 
   if (password != passwordConfirmation) {
-    return {
-      valid: false,
-      message: 'Passwords do not match',
-    };
+    return { valid: false, code: 'passwords_mismatch' };
   }
 
   return { valid: true };
 }
 
+export type PasswordStrengthLevel =
+  'none' | 'very_weak' | 'weak' | 'fair' | 'strong' | 'very_strong';
+
 export function getPasswordStrength(value: string): {
   percent: number;
-  text: string;
+  level: PasswordStrengthLevel;
   color: TwTextColor;
 } {
-  let percent: number;
-  let text: string;
-  let color: TwTextColor;
-
   if (value.length === 0) {
-    percent = 0;
-    text = 'None';
-    color = 'gray';
-  } else {
-    percent = Math.min((calculateStringEntropy(value) / 120) * 100, 100);
-
-    if (percent < 30) {
-      text = 'Very weak';
-      color = 'red';
-    } else if (percent < 50) {
-      text = 'Weak';
-      color = 'orange';
-    } else if (percent < 60) {
-      text = 'Fair';
-      color = 'yellow';
-    } else if (percent < 99) {
-      text = 'Strong';
-      color = 'green';
-    } else {
-      text = 'Very strong';
-      color = 'cyan';
-    }
+    return { percent: 0, level: 'none', color: 'gray' };
   }
 
-  return { percent, text, color };
+  const percent = Math.min((calculateStringEntropy(value) / 120) * 100, 100);
+
+  if (percent < 30) return { percent, level: 'very_weak', color: 'red' };
+  if (percent < 50) return { percent, level: 'weak', color: 'orange' };
+  if (percent < 60) return { percent, level: 'fair', color: 'yellow' };
+  if (percent < 99) return { percent, level: 'strong', color: 'green' };
+  return { percent, level: 'very_strong', color: 'cyan' };
 }

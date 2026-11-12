@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Moon, Sun } from '@lucide/svelte';
   import { Button, buttonVariants } from '@openshock/svelte-core/components/ui/button/index.js';
   import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
@@ -50,7 +51,7 @@
     if (isGoingNuclear(colorScheme.value, scheme)) {
       const darkreader = getDarkReaderState();
       if (darkreader.isActive) {
-        toast.warning('DarkReader is enabled, activating light mode will have no effect!');
+        toast.warning(m.light_mode_darkreader_warning());
         return;
       }
       pendingScheme = scheme;
@@ -58,19 +59,26 @@
     }
     colorScheme.value = scheme;
   }
+
+  const schemeLabels: Record<ColorScheme, () => string> = {
+    [ColorScheme.Dark]: m.color_scheme_dark,
+    [ColorScheme.Light]: m.color_scheme_light,
+    [ColorScheme.System]: m.color_scheme_system,
+  };
 </script>
 
 <Dialog.Root bind:open={() => pendingScheme !== null, handleOpenChanged}>
   <Dialog.Content>
     <Dialog.Header>
-      <Dialog.Title>Switch to light mode</Dialog.Title>
+      <Dialog.Title>{m.light_mode_dialog_title()}</Dialog.Title>
       <Dialog.Description>
-        <span class="font-bold text-red-500">Warning:</span> You are about to switch to light mode.
+        <span class="font-bold text-red-500">{m.light_mode_dialog_warning_label()}</span>
+        {m.light_mode_dialog_description()}
         <br />
-        Are you sure you want to do this?
+        {m.light_mode_dialog_question()}
       </Dialog.Description>
     </Dialog.Header>
-    <Button variant="destructive" onclick={confirm}>I am willing to take the risk</Button>
+    <Button variant="destructive" onclick={confirm}>{m.light_mode_dialog_confirm()}</Button>
   </Dialog.Content>
 </Dialog.Root>
 
@@ -82,13 +90,13 @@
     <Moon
       class="absolute size-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
     />
-    <span class="sr-only">Toggle theme</span>
+    <span class="sr-only">{m.color_scheme_toggle()}</span>
   </DropdownMenu.Trigger>
   <DropdownMenu.Content align="end">
     {#each Object.values(ColorScheme) as value (value)}
       <DropdownMenu.Item
         class="cursor-pointer capitalize"
-        onclick={() => evaluateLightSwitch(value)}>{value}</DropdownMenu.Item
+        onclick={() => evaluateLightSwitch(value)}>{schemeLabels[value]()}</DropdownMenu.Item
       >
     {/each}
   </DropdownMenu.Content>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import * as Sheet from '@openshock/svelte-core/components/ui/sheet/index.js';
   import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
   import { SIDEBAR_WIDTH_MOBILE } from './constants.js';
@@ -48,8 +49,8 @@
       {side}
     >
       <Sheet.Header class="sr-only">
-        <Sheet.Title>Sidebar</Sheet.Title>
-        <Sheet.Description>Displays the mobile sidebar.</Sheet.Description>
+        <Sheet.Title>{m.sidebar_title()}</Sheet.Title>
+        <Sheet.Description>{m.sidebar_mobile_description()}</Sheet.Description>
       </Sheet.Header>
       <div class="flex h-full w-full flex-col">
         {@render children?.()}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { CircleCheckBig, Copy } from '@lucide/svelte';
   import { cn } from '@openshock/svelte-core/utils/index.js';
   import { useClipboard } from '@openshock/svelte-core/utils/clipboard.svelte.js';
@@ -37,7 +38,7 @@
     <button
       onclick={() => clip.copy(value)}
       class="transition-in-place"
-      title={clip.copied ? 'Copied' : 'Copy to clipboard'}
+      title={clip.copied ? m.clipboard_copied() : m.clipboard_copy()}
       type="button"
     >
       {#if clip.copied}

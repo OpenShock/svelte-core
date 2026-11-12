@@ -1,0 +1,78 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "关闭",
+  "common_cancel": "取消",
+  "common_confirm": "确认",
+  "common_ok": "确定",
+  "common_delete": "删除",
+  "common_try_again": "重试",
+  "common_previous": "上一页",
+  "common_next": "下一页",
+  "common_more": "更多",
+  "common_open_menu": "打开菜单",
+
+  "pagination_label": "分页",
+  "pagination_go_to_previous_page": "转到上一页",
+  "pagination_go_to_next_page": "转到下一页",
+  "pagination_more_pages": "更多页面",
+  "breadcrumb_label": "面包屑导航",
+
+  "sidebar_title": "侧边栏",
+  "sidebar_mobile_description": "显示移动端侧边栏。",
+  "sidebar_toggle": "切换侧边栏",
+
+  "command_palette_title": "命令面板",
+  "command_palette_description": "搜索要运行的命令...",
+
+  "color_scheme_toggle": "切换主题",
+  "color_scheme_dark": "深色",
+  "color_scheme_light": "浅色",
+  "color_scheme_system": "跟随系统",
+  "light_mode_dialog_title": "切换到浅色模式",
+  "light_mode_dialog_warning_label": "警告：",
+  "light_mode_dialog_description": "你即将切换到浅色模式。",
+  "light_mode_dialog_question": "确定要这样做吗？",
+  "light_mode_dialog_confirm": "我愿意承担风险",
+  "light_mode_darkreader_warning": "DarkReader 已启用，启用浅色模式将不会生效！",
+
+  "clipboard_copy": "复制到剪贴板",
+  "clipboard_copied": "已复制",
+  "clipboard_copied_toast": "已复制到剪贴板",
+  "clipboard_failed_toast": "复制到剪贴板失败",
+
+  "password_show": "显示密码",
+  "password_hide": "隐藏密码",
+  "password_forgot": "忘记密码？",
+  "password_pwned_whats_this": "这是什么？",
+  "password_strength_label": "密码强度：",
+  "password_strength_none": "无",
+  "password_strength_very_weak": "非常弱",
+  "password_strength_weak": "弱",
+  "password_strength_fair": "一般",
+  "password_strength_strong": "强",
+  "password_strength_very_strong": "非常强",
+
+  "validation_password_checking": "正在检查密码...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=other": "该密码出现在 {count} 次数据泄露中"
+      }
+    }
+  ],
+  "validation_password_too_short": "密码太短",
+  "validation_password_too_long": "认真的吗？{length} 个字符？太长了",
+  "validation_password_only_whitespace": "密码不能只包含空格",
+  "validation_password_edge_whitespace": "密码不能以空格开头或结尾",
+  "validation_passwords_mismatch": "两次输入的密码不一致",
+  "validation_email_invalid": "无效的电子邮件地址",
+  "validation_email_alias": "电子邮件地址不能包含别名",
+
+  "time_hours": "小时",
+  "time_minutes": "分钟",
+  "time_seconds": "秒",
+  "date_pick": "选择日期"
+}

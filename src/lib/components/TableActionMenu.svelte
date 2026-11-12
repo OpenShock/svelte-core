@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import Ellipsis from '@lucide/svelte/icons/ellipsis';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import * as DropdownMenu from '@openshock/svelte-core/components/ui/dropdown-menu/index.js';
@@ -15,7 +16,7 @@
   <DropdownMenu.Trigger>
     {#snippet child({ props })}
       <Button {...props} variant="ghost" size="icon" class="relative size-8 p-0">
-        <span class="sr-only">Open menu</span>
+        <span class="sr-only">{m.common_open_menu()}</span>
         <Ellipsis class="size-4" />
       </Button>
     {/snippet}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "閉じる",
+  "common_cancel": "キャンセル",
+  "common_confirm": "確認",
+  "common_ok": "OK",
+  "common_delete": "削除",
+  "common_try_again": "再試行",
+  "common_previous": "前へ",
+  "common_next": "次へ",
+  "common_more": "もっと見る",
+  "common_open_menu": "メニューを開く",
+
+  "pagination_label": "ページネーション",
+  "pagination_go_to_previous_page": "前のページへ",
+  "pagination_go_to_next_page": "次のページへ",
+  "pagination_more_pages": "他のページ",
+  "breadcrumb_label": "パンくずリスト",
+
+  "sidebar_title": "サイドバー",
+  "sidebar_mobile_description": "モバイル用サイドバーを表示します。",
+  "sidebar_toggle": "サイドバーを切り替える",
+
+  "command_palette_title": "コマンドパレット",
+  "command_palette_description": "実行するコマンドを検索...",
+
+  "color_scheme_toggle": "テーマを切り替える",
+  "color_scheme_dark": "ダーク",
+  "color_scheme_light": "ライト",
+  "color_scheme_system": "システム",
+  "light_mode_dialog_title": "ライトモードに切り替える",
+  "light_mode_dialog_warning_label": "警告:",
+  "light_mode_dialog_description": "ライトモードに切り替えようとしています。",
+  "light_mode_dialog_question": "実行してもよろしいですか？",
+  "light_mode_dialog_confirm": "リスクを承知の上で切り替える",
+  "light_mode_darkreader_warning": "DarkReader が有効なため、ライトモードにしても効果はありません！",
+
+  "clipboard_copy": "クリップボードにコピー",
+  "clipboard_copied": "コピーしました",
+  "clipboard_copied_toast": "クリップボードにコピーしました",
+  "clipboard_failed_toast": "クリップボードへのコピーに失敗しました",
+
+  "password_show": "パスワードを表示",
+  "password_hide": "パスワードを隠す",
+  "password_forgot": "パスワードをお忘れですか？",
+  "password_pwned_whats_this": "これは何？",
+  "password_strength_label": "パスワードの強度:",
+  "password_strength_none": "なし",
+  "password_strength_very_weak": "非常に弱い",
+  "password_strength_weak": "弱い",
+  "password_strength_fair": "普通",
+  "password_strength_strong": "強い",
+  "password_strength_very_strong": "非常に強い",
+
+  "validation_password_checking": "パスワードを確認中...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=other": "このパスワードは {count} 件のデータ漏洩で検出されました"
+      }
+    }
+  ],
+  "validation_password_too_short": "パスワードが短すぎます",
+  "validation_password_too_long": "本気ですか？{length} 文字？長すぎます",
+  "validation_password_only_whitespace": "パスワードを空白のみにすることはできません",
+  "validation_password_edge_whitespace": "パスワードの先頭または末尾に空白は使えません",
+  "validation_passwords_mismatch": "パスワードが一致しません",
+  "validation_email_invalid": "無効なメールアドレス",
+  "validation_email_alias": "メールアドレスにエイリアスは使えません",
+
+  "time_hours": "時",
+  "time_minutes": "分",
+  "time_seconds": "秒",
+  "date_pick": "日付を選択"
+}

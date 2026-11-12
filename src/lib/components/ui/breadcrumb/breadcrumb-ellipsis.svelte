@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import MoreHorizontalIcon from '@lucide/svelte/icons/more-horizontal';
   import {
     cn,
@@ -23,5 +24,5 @@
   {...restProps}
 >
   <MoreHorizontalIcon />
-  <span class="sr-only">More</span>
+  <span class="sr-only">{m.common_more()}</span>
 </span>

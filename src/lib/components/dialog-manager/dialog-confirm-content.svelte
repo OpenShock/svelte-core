@@ -1,4 +1,5 @@
 <script lang="ts" generics="T">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Spinner } from '@openshock/svelte-core/components/ui/spinner/index.js';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import * as Dialog from '@openshock/svelte-core/components/ui/dialog/index.js';
@@ -8,8 +9,8 @@
     title,
     desc,
     data,
-    confirmButtonText = 'Confirm',
-    cancelButtonText = 'Cancel',
+    confirmButtonText = m.common_confirm(),
+    cancelButtonText = m.common_cancel(),
     descSnippet,
     resolve,
     close,

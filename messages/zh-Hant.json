@@ -1,0 +1,78 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "common_close": "關閉",
+  "common_cancel": "取消",
+  "common_confirm": "確認",
+  "common_ok": "確定",
+  "common_delete": "刪除",
+  "common_try_again": "再試一次",
+  "common_previous": "上一頁",
+  "common_next": "下一頁",
+  "common_more": "更多",
+  "common_open_menu": "開啟選單",
+
+  "pagination_label": "分頁",
+  "pagination_go_to_previous_page": "前往上一頁",
+  "pagination_go_to_next_page": "前往下一頁",
+  "pagination_more_pages": "更多頁面",
+  "breadcrumb_label": "導覽路徑",
+
+  "sidebar_title": "側邊欄",
+  "sidebar_mobile_description": "顯示行動版側邊欄。",
+  "sidebar_toggle": "切換側邊欄",
+
+  "command_palette_title": "命令面板",
+  "command_palette_description": "搜尋要執行的命令...",
+
+  "color_scheme_toggle": "切換主題",
+  "color_scheme_dark": "深色",
+  "color_scheme_light": "淺色",
+  "color_scheme_system": "跟隨系統",
+  "light_mode_dialog_title": "切換至淺色模式",
+  "light_mode_dialog_warning_label": "警告：",
+  "light_mode_dialog_description": "你即將切換至淺色模式。",
+  "light_mode_dialog_question": "確定要這麼做嗎？",
+  "light_mode_dialog_confirm": "我願意承擔風險",
+  "light_mode_darkreader_warning": "DarkReader 已啟用，啟用淺色模式將不會生效！",
+
+  "clipboard_copy": "複製到剪貼簿",
+  "clipboard_copied": "已複製",
+  "clipboard_copied_toast": "已複製到剪貼簿",
+  "clipboard_failed_toast": "複製到剪貼簿失敗",
+
+  "password_show": "顯示密碼",
+  "password_hide": "隱藏密碼",
+  "password_forgot": "忘記密碼？",
+  "password_pwned_whats_this": "這是什麼？",
+  "password_strength_label": "密碼強度：",
+  "password_strength_none": "無",
+  "password_strength_very_weak": "非常弱",
+  "password_strength_weak": "弱",
+  "password_strength_fair": "一般",
+  "password_strength_strong": "強",
+  "password_strength_very_strong": "非常強",
+
+  "validation_password_checking": "正在檢查密碼...",
+  "validation_password_pwned": [
+    {
+      "declarations": ["input count", "local countPlural = count: plural"],
+      "selectors": ["countPlural"],
+      "match": {
+        "countPlural=other": "此密碼出現在 {count} 次資料外洩中"
+      }
+    }
+  ],
+  "validation_password_too_short": "密碼太短",
+  "validation_password_too_long": "認真的嗎？{length} 個字元？太長了",
+  "validation_password_only_whitespace": "密碼不能只包含空格",
+  "validation_password_edge_whitespace": "密碼不能以空格開頭或結尾",
+  "validation_passwords_mismatch": "兩次輸入的密碼不一致",
+  "validation_email_invalid": "無效的電子郵件地址",
+  "validation_email_alias": "電子郵件地址不能包含別名",
+
+  "time_hours": "小時",
+  "time_minutes": "分鐘",
+  "time_seconds": "秒",
+  "date_pick": "選擇日期"
+}
