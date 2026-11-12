@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Dialog as DialogPrimitive } from 'bits-ui';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import { cn, type WithElementRef } from '@openshock/svelte-core/utils/shadcn.js';
@@ -28,7 +29,7 @@
   {#if showCloseButton}
     <DialogPrimitive.Close>
       {#snippet child({ props })}
-        <Button variant="outline" {...props}>Close</Button>
+        <Button variant="outline" {...props}>{m.common_close()}</Button>
       {/snippet}
     </DialogPrimitive.Close>
   {/if}

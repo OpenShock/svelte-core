@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import MoreHorizontalIcon from '@lucide/svelte/icons/more-horizontal';
   import {
     cn,
@@ -25,5 +26,5 @@
   {...restProps}
 >
   <MoreHorizontalIcon />
-  <span class="sr-only">More pages</span>
+  <span class="sr-only">{m.pagination_more_pages()}</span>
 </span>

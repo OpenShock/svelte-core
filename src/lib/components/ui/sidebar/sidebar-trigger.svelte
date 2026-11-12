@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import PanelLeftIcon from '@lucide/svelte/icons/panel-left';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
@@ -32,5 +33,5 @@
   {...restProps}
 >
   <PanelLeftIcon class="cn-rtl-flip" />
-  <span class="sr-only">Toggle Sidebar</span>
+  <span class="sr-only">{m.sidebar_toggle()}</span>
 </Button>

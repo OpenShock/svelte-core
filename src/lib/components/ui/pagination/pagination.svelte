@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Pagination as PaginationPrimitive } from 'bits-ui';
   import { cn } from '@openshock/svelte-core/utils/shadcn.js';
 
@@ -17,7 +18,7 @@
   bind:ref
   bind:page
   role="navigation"
-  aria-label="pagination"
+  aria-label={m.pagination_label()}
   data-slot="pagination"
   {count}
   {perPage}

@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+  import { m } from '@openshock/svelte-core/paraglide/messages.js';
   import { Dialog as SheetPrimitive } from 'bits-ui';
   import XIcon from '@lucide/svelte/icons/x';
   import { Button } from '@openshock/svelte-core/components/ui/button/index.js';
@@ -46,7 +47,7 @@
         {#snippet child({ props })}
           <Button variant="ghost" class="absolute top-3 right-3" size="icon-sm" {...props}>
             <XIcon />
-            <span class="sr-only">Close</span>
+            <span class="sr-only">{m.common_close()}</span>
           </Button>
         {/snippet}
       </SheetPrimitive.Close>
